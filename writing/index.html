@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Writing — Earl Kiu</title>
+<meta name="description" content="Writing by Earl Kiu — photographer based in Kuala Lumpur.">
 <link rel="stylesheet" href="style.css">
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6DM42N1462"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -17,23 +17,95 @@
 <body>
 
   <header class="site-header">
-    <span class="site-name">Writing</span>
+    <div class="nav-left">
+      <a class="nav-brand" href="/">Earl Kiu</a>
+      <span class="nav-location">Writing</span>
+    </div>
   </header>
 
-  <main class="entry-list">
+  <div class="mobile-back" id="mobile-back" style="display:none;" onclick="goBack()">
+    <span>← All writing</span>
+  </div>
 
-    <a href="common-sense.html" class="entry">
-      <span class="entry-date">May 2026</span>
-      <span class="entry-title">Common sense</span>
-    </a>
+  <div class="writing-layout">
 
-    <!-- Add new entries above this line, newest first -->
+    <nav class="entry-list" id="entry-list">
+      <a class="entry" onclick="loadEntry(0)">
+        <span class="entry-date">May 2026</span>
+        <span class="entry-title">The worst thing</span>
+      </a>
+      <a class="entry" onclick="loadEntry(1)">
+        <span class="entry-date">May 2026</span>
+        <span class="entry-title">Common sense</span>
+      </a>
+      <!-- Add new entries above this line, newest first -->
+    </nav>
 
-  </main>
+    <div class="entry-panel" id="entry-panel">
+      <div class="panel-empty">Select a piece to read</div>
+    </div>
+
+  </div>
 
   <footer class="site-footer">
     <span>Earl Kiu is a photographer based in Kuala Lumpur.&ensp;<a href="https://earlkiu.com">earlkiu.com</a></span>
   </footer>
+
+<script>
+  const entries = [
+    {
+      date: 'May 2026',
+      title: 'The worst thing',
+      body: '<p>The worst thing a photographer can be, is to forget the person in front of us is a human.</p>'
+    },
+    {
+      date: 'May 2026',
+      title: 'Common sense',
+      body: '<p>Only common among people from the same culture and similar background.</p>'
+    }
+  ];
+
+  let current = null;
+
+  function loadEntry(index) {
+    current = index;
+    const entry = entries[index];
+
+    document.querySelectorAll('.entry').forEach((el, i) => el.classList.toggle('active', i === index));
+
+    const prevDisabled = index === 0 ? 'disabled' : '';
+    const nextDisabled = index === entries.length - 1 ? 'disabled' : '';
+
+    document.getElementById('entry-panel').innerHTML = `
+      <div class="entry-meta"><span class="entry-date">${entry.date}</span></div>
+      <h1 class="entry-heading">${entry.title}</h1>
+      <div class="entry-content">${entry.body}</div>
+      <nav class="entry-nav">
+        <a class="${prevDisabled}" onclick="navigate(-1)">← Prev</a>
+        <a class="${nextDisabled}" onclick="navigate(1)">Next →</a>
+      </nav>
+    `;
+
+    if (window.innerWidth <= 767) {
+      document.getElementById('entry-list').classList.add('hidden');
+      document.getElementById('entry-panel').classList.remove('hidden');
+      document.getElementById('mobile-back').style.display = 'flex';
+    }
+  }
+
+  function navigate(dir) {
+    const next = current + dir;
+    if (next < 0 || next >= entries.length) return;
+    loadEntry(next);
+    window.scrollTo(0, 0);
+  }
+
+  function goBack() {
+    document.getElementById('entry-list').classList.remove('hidden');
+    document.getElementById('entry-panel').classList.add('hidden');
+    document.getElementById('mobile-back').style.display = 'none';
+  }
+</script>
 
 </body>
 </html>

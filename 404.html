@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>404 — Earl Kiu</title>
+<meta name="robots" content="noindex">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6DM42N1462"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6DM42N1462');
+</script>
 
 <style>
 @import url('https://use.typekit.net/pur8tye.css');
@@ -21,10 +31,7 @@
   --font: 'artifex-hand-cf', Georgia, serif;
 }
 
-html, body {
-  height: 100%;
-  overflow: hidden;
-}
+html, body { height: 100%; overflow: hidden; }
 
 body {
   background: var(--n700);
@@ -69,9 +76,7 @@ nav {
 
 .nav-links a:hover { color: var(--n100); }
 
-.content {
-  padding: 0 52px 80px;
-}
+.content { padding: 0 52px 80px; }
 
 @media (max-width: 767px) { .content { padding: 0 24px 60px; } }
 
@@ -106,7 +111,7 @@ nav {
 
 .error-link:hover { border-color: var(--n300); }
 
-body, nav, .content {
+body {
   opacity: 0;
   animation: fadeIn 1s ease 0.2s forwards;
 }

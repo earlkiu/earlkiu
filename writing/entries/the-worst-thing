@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The worst thing — Earl Kiu</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../style.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6DM42N1462"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -17,10 +17,10 @@
 
   <header class="site-header">
     <div class="nav-left">
-      <a class="nav-brand" href="/">Earl Kiu</a>
+      <a class="nav-brand" href="../index.html">Earl Kiu</a>
       <span class="nav-location">Writing</span>
     </div>
-    <a href="index.html" class="back-link">← All</a>
+    <a href="../index.html" class="back-link">← All</a>
   </header>
 
   <main class="entry-body">

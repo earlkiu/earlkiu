@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Earl Kiu — Portrait Photography, Kuala Lumpur</title>
+<title>People — Earl Kiu</title>
 
 <style>
 @import url('https://use.typekit.net/pur8tye.css');
@@ -21,10 +21,7 @@
   --font: 'artifex-hand-cf', Georgia, serif;
 }
 
-html, body {
-  height: 100%;
-  overflow: hidden;
-}
+html, body { height: 100%; overflow: hidden; }
 
 body {
   background: var(--n700);
@@ -32,13 +29,7 @@ body {
   font-family: var(--font);
 }
 
-/* ─── SLIDER ─── */
-
-.slider {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-}
+.slider { position: fixed; inset: 0; z-index: 0; }
 
 .slide {
   position: absolute;
@@ -46,44 +37,54 @@ body {
   opacity: 0;
   transition: opacity 1.8s ease-in-out;
   background-size: cover;
-  background-position: center;
+  background-position: center top;
   will-change: opacity;
 }
 
 .slide.active { opacity: 1; }
 
-/* Placeholder slides — replace background-image with your Cloudinary URLs */
-.slide-1 { background-image: url('https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1600&q=80&fit=crop'); }
-.slide-2 { background-image: url('https://images.unsplash.com/photo-1509631179647-0177331693ae?w=1600&q=80&fit=crop'); }
-.slide-3 { background-image: url('https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1600&q=80&fit=crop&sat=-80'); }
-.slide-4 { background-image: url('https://images.unsplash.com/photo-1524502397800-2eeaad7c3fe5?w=1600&q=80&fit=crop'); }
-.slide-5 { background-image: url('https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?w=1600&q=80&fit=crop'); }
+@media (min-width: 768px) {
+  .slide-1 { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033016/People-01-l_bgf9v0.jpg'); }
+  .slide-2 { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033017/People-06-l_woknno.jpg'); }
+  .slide-3 { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779035837/People-03-l_rywmml.jpg'); }
+  .slide-4 { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033017/People-05-l_i1knmn.jpg'); }
+  .slide-5 { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033017/People-04-l_k2jt2c.jpg'); }
+  .slide-6 { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779035771/Poeple-02-l_yasbt8.jpg'); }
+  .slide-7 { display: none; }
+}
 
-/* Overlay — darkens image, creates depth */
+@media (max-width: 767px) {
+  .slide-1 { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033608/People-01-M_uj8kgs.jpg'); }
+  .slide-2 { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033017/People-06-l_woknno.jpg'); }
+  .slide-3 { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033608/People-03-M_c3z79b.jpg'); }
+  .slide-4 { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033611/People-05-M_sglqws.jpg'); }
+  .slide-5 { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033609/People-04-M_sdjsvl.jpg'); }
+  .slide-6 { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033612/People-02-M_hcfqxh.jpg'); }
+  .slide-7 { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779035913/People-07-M_vqolph.jpg'); }
+}
+
 .slider::after {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to right, rgba(16,15,13,0.72) 0%, rgba(16,15,13,0.2) 60%, rgba(16,15,13,0.1) 100%),
-    linear-gradient(to top, rgba(16,15,13,0.6) 0%, transparent 50%);
+    linear-gradient(to right, rgba(16,15,13,0.5) 0%, rgba(16,15,13,0.1) 60%, rgba(16,15,13,0.05) 100%),
+    linear-gradient(to top, rgba(16,15,13,0.7) 0%, transparent 40%);
   z-index: 1;
   pointer-events: none;
 }
 
-/* ─── NAV ─── */
-
 nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   padding: 40px 52px;
 }
+
+@media (max-width: 767px) { nav { padding: 28px 24px; } }
 
 .nav-brand {
   font-size: 13px;
@@ -95,198 +96,177 @@ nav {
   opacity: 0.9;
 }
 
-.nav-links {
-  display: flex;
-  gap: 36px;
-  list-style: none;
-}
+.nav-links { display: flex; gap: 36px; list-style: none; }
+
+@media (max-width: 767px) { .nav-links { gap: 20px; } }
 
 .nav-links a {
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--n300);
+  color: var(--n400);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.nav-links a:hover { color: var(--n100); }
+.nav-links a:hover,
+.nav-links a.active { color: var(--n100); }
 
-/* ─── HERO COPY ─── */
-
-.hero {
+.bottom {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: 0; left: 0; right: 0;
   z-index: 5;
-  padding: 0 52px 56px;
+  padding: 0 52px 40px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
 
-.hero-left { max-width: 540px; }
+@media (max-width: 767px) { .bottom { padding: 0 24px 32px; } }
 
-.hero-eyebrow {
-  font-size: 10px;
+.bottom-left { display: flex; flex-direction: column; gap: 4px; }
+
+.collection-label {
+  font-size: 9px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--n300);
-  margin-bottom: 20px;
-  display: block;
-}
-
-.hero-title {
-  font-size: clamp(34px, 4.5vw, 58px);
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  line-height: 1.05;
-  color: var(--n100);
-  margin-bottom: 24px;
-}
-
-.hero-body {
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.65;
-  color: var(--n300);
-  max-width: 380px;
-}
-
-.hero-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 20px;
-}
-
-.hero-cta {
-  display: inline-block;
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--n100);
-  text-decoration: none;
-  border-bottom: 1px solid var(--n400);
-  padding-bottom: 4px;
-  transition: border-color 0.3s ease, color 0.3s ease;
-}
-
-.hero-cta:hover {
-  color: var(--n200);
-  border-color: var(--n200);
-}
-
-/* ─── SLIDE COUNTER ─── */
-
-.slide-counter {
-  font-size: 10px;
-  letter-spacing: 0.18em;
   color: var(--n400);
-  text-transform: uppercase;
+}
+
+.location-label {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--n300);
+}
+
+.bottom-right { display: flex; align-items: center; gap: 16px; }
+
+.arrow {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--n500);
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  flex-shrink: 0;
+  background: none;
 }
 
-.counter-dots {
-  display: flex;
-  gap: 6px;
+.arrow:hover { border-color: var(--n300); }
+
+.arrow svg {
+  width: 12px;
+  height: 12px;
+  stroke: var(--n300);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.counter-dot {
+.dots { display: flex; gap: 5px; align-items: center; }
+
+.dot {
   width: 4px;
   height: 4px;
-  border-radius: 50%;
   background: var(--n500);
-  transition: background 0.4s ease;
   cursor: pointer;
+  transition: background 0.4s ease;
+  flex-shrink: 0;
 }
 
-.counter-dot.active { background: var(--n300); }
+.dot.active { background: var(--n300); }
 
-/* ─── FADE IN ON LOAD ─── */
-
-nav, .hero {
+nav, .bottom {
   opacity: 0;
   animation: fadeUp 1.2s ease 0.4s forwards;
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(12px); }
+  from { opacity: 0; transform: translateY(8px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 </style>
 </head>
 <body>
 
-<!-- SLIDER -->
 <div class="slider" id="slider">
   <div class="slide slide-1 active"></div>
   <div class="slide slide-2"></div>
   <div class="slide slide-3"></div>
   <div class="slide slide-4"></div>
   <div class="slide slide-5"></div>
+  <div class="slide slide-6"></div>
+  <div class="slide slide-7"></div>
 </div>
 
-<!-- NAV -->
 <nav>
   <a class="nav-brand" href="/">Earl Kiu</a>
   <ul class="nav-links">
-    <li><a href="/work">Work</a></li>
-    <li><a href="/about">About</a></li>
-    <li><a href="/session">Book a Session</a></li>
+    <li><a href="/" class="active">People</a></li>
+    <li><a href="/street.html">Street</a></li>
+    <li><a href="/about.html">About</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-left">
-    <span class="hero-eyebrow">Portrait · Kuala Lumpur</span>
-    <h1 class="hero-title">You've never seen<br>yourself like this</h1>
-    <p class="hero-body">A portrait session for those ready to be seen — fully, quietly, without pretense.</p>
+<div class="bottom">
+  <div class="bottom-left">
+    <span class="collection-label">People</span>
+    <span class="location-label">Kuala Lumpur, Malaysia</span>
   </div>
 
-  <div class="hero-right">
-    <a class="hero-cta" href="/session">Book a session</a>
-    <div class="slide-counter">
-      <div class="counter-dots" id="dots"></div>
-    </div>
+  <div class="bottom-right">
+    <button class="arrow" id="prev" aria-label="Previous">
+      <svg viewBox="0 0 12 12"><polyline points="8,2 4,6 8,10"/></svg>
+    </button>
+    <div class="dots" id="dots"></div>
+    <button class="arrow" id="next" aria-label="Next">
+      <svg viewBox="0 0 12 12"><polyline points="4,2 8,6 4,10"/></svg>
+    </button>
   </div>
 </div>
 
 <script>
-  const slides = document.querySelectorAll('.slide');
+  const isMobile = window.matchMedia('(max-width: 767px)').matches;
+  const totalSlides = isMobile ? 7 : 6;
+  const allSlides = document.querySelectorAll('.slide');
+  const slides = Array.from(allSlides).slice(0, totalSlides);
   const dotsContainer = document.getElementById('dots');
   let current = 0;
   let timer;
 
-  // Build dots
   slides.forEach((_, i) => {
     const dot = document.createElement('div');
-    dot.className = 'counter-dot' + (i === 0 ? ' active' : '');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
     dot.addEventListener('click', () => goTo(i));
     dotsContainer.appendChild(dot);
   });
 
-  function getDots() { return document.querySelectorAll('.counter-dot'); }
+  function getDots() { return document.querySelectorAll('.dot'); }
 
   function goTo(index) {
     slides[current].classList.remove('active');
     getDots()[current].classList.remove('active');
-    current = index;
+    current = (index + slides.length) % slides.length;
     slides[current].classList.add('active');
     getDots()[current].classList.add('active');
     clearInterval(timer);
-    timer = setInterval(advance, 5000);
+    timer = setInterval(advance, 6000);
   }
 
-  function advance() {
-    goTo((current + 1) % slides.length);
-  }
+  function advance() { goTo(current + 1); }
 
-  timer = setInterval(advance, 5000);
+  document.getElementById('prev').addEventListener('click', () => goTo(current - 1));
+  document.getElementById('next').addEventListener('click', () => goTo(current + 1));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') goTo(current - 1);
+    if (e.key === 'ArrowRight') goTo(current + 1);
+  });
+
+  timer = setInterval(advance, 6000);
 </script>
 </body>
 </html>

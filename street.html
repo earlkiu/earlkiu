@@ -8,7 +8,6 @@
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://www.earlkiu.com/street">
 
-<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6DM42N1462"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -53,6 +52,8 @@ nav {
 
 @media (max-width: 767px) { nav { padding: 28px 24px; } }
 
+.nav-left { display: flex; flex-direction: column; gap: 4px; }
+
 .nav-brand {
   font-size: 13px;
   font-weight: 600;
@@ -61,6 +62,12 @@ nav {
   color: var(--n100);
   text-decoration: none;
   opacity: 0.9;
+}
+
+.nav-location {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--n500);
 }
 
 .nav-links { display: flex; gap: 36px; list-style: none; }
@@ -111,7 +118,10 @@ body {
 <body>
 
 <nav>
-  <a class="nav-brand" href="/">Earl Kiu</a>
+  <div class="nav-left">
+    <a class="nav-brand" href="/">Earl Kiu</a>
+    <span class="nav-location">Kuala Lumpur, Malaysia</span>
+  </div>
   <ul class="nav-links">
     <li><a href="/">People</a></li>
     <li><a href="/street.html" class="active">Street</a></li>

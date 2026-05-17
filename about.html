@@ -8,20 +8,17 @@
 <meta name="author" content="Earl Kiu">
 <link rel="canonical" href="https://www.earlkiu.com/about">
 
-<!-- Open Graph -->
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://www.earlkiu.com/about">
 <meta property="og:title" content="About Earl Kiu — Portrait Photographer, Kuala Lumpur">
 <meta property="og:description" content="Drawn to quiet expression, sculpted light, and the honesty of presence.">
 <meta property="og:image" content="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779037539/about-01_dyecgy.jpg">
 
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="About Earl Kiu — Portrait Photographer, Kuala Lumpur">
 <meta name="twitter:description" content="Drawn to quiet expression, sculpted light, and the honesty of presence.">
 <meta name="twitter:image" content="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779037539/about-01_dyecgy.jpg">
 
-<!-- Schema — AEO -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -42,7 +39,6 @@
 }
 </script>
 
-<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6DM42N1462"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -89,6 +85,8 @@ nav {
 
 @media (max-width: 767px) { nav { padding: 28px 24px; } }
 
+.nav-left { display: flex; flex-direction: column; gap: 4px; }
+
 .nav-brand {
   font-size: 13px;
   font-weight: 600;
@@ -96,6 +94,12 @@ nav {
   text-transform: uppercase;
   color: var(--n700);
   text-decoration: none;
+}
+
+.nav-location {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--n300);
 }
 
 .nav-links { display: flex; gap: 36px; list-style: none; }
@@ -218,7 +222,10 @@ nav {
 <body>
 
 <nav>
-  <a class="nav-brand" href="/">Earl Kiu</a>
+  <div class="nav-left">
+    <a class="nav-brand" href="/">Earl Kiu</a>
+    <span class="nav-location">Kuala Lumpur, Malaysia</span>
+  </div>
   <ul class="nav-links">
     <li><a href="/">People</a></li>
     <li><a href="/street.html">Street</a></li>

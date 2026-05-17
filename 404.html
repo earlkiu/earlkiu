@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Earl Kiu</title>
+
+<style>
+@import url('https://use.typekit.net/pur8tye.css');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --n100: #F2F0ED;
+  --n200: #DDDAD6;
+  --n300: #B0ACA7;
+  --n400: #7A7672;
+  --n500: #3F3D3A;
+  --n600: #1E1C1A;
+  --n700: #100F0D;
+  --font: 'artifex-hand-cf', Georgia, serif;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: var(--n700);
+  color: var(--n100);
+  font-family: var(--font);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px 52px;
+}
+
+@media (max-width: 767px) { nav { padding: 28px 24px; } }
+
+.nav-brand {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--n100);
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.nav-links { display: flex; gap: 36px; list-style: none; }
+
+@media (max-width: 767px) { .nav-links { gap: 20px; } }
+
+.nav-links a {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--n400);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover { color: var(--n100); }
+
+.content {
+  padding: 0 52px 80px;
+}
+
+@media (max-width: 767px) { .content { padding: 0 24px 60px; } }
+
+.error-code {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--n500);
+  display: block;
+  margin-bottom: 20px;
+}
+
+.error-title {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--n100);
+  margin-bottom: 32px;
+}
+
+.error-link {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--n100);
+  text-decoration: none;
+  border-bottom: 1px solid var(--n500);
+  padding-bottom: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.error-link:hover { border-color: var(--n300); }
+
+body, nav, .content {
+  opacity: 0;
+  animation: fadeIn 1s ease 0.2s forwards;
+}
+
+@keyframes fadeIn { to { opacity: 1; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="/">Earl Kiu</a>
+  <ul class="nav-links">
+    <li><a href="/">People</a></li>
+    <li><a href="/street.html">Street</a></li>
+    <li><a href="/about.html">About</a></li>
+  </ul>
+</nav>
+
+<div class="content">
+  <span class="error-code">404</span>
+  <h1 class="error-title">This frame<br>is empty.</h1>
+  <a class="error-link" href="/">Back to the work</a>
+</div>
+
+</body>
+</html>

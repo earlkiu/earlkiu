@@ -8,20 +8,17 @@
 <meta name="author" content="Earl Kiu">
 <link rel="canonical" href="https://www.earlkiu.com/">
 
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.earlkiu.com/">
 <meta property="og:title" content="Earl Kiu — Portrait Photographer, Kuala Lumpur">
 <meta property="og:description" content="Editorial portrait and fashion photography. Kuala Lumpur, Malaysia.">
 <meta property="og:image" content="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779037539/about-01_dyecgy.jpg">
 
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Earl Kiu — Portrait Photographer, Kuala Lumpur">
 <meta name="twitter:description" content="Editorial portrait and fashion photography. Kuala Lumpur, Malaysia.">
 <meta name="twitter:image" content="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779037539/about-01_dyecgy.jpg">
 
-<!-- Schema — AEO -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -43,7 +40,6 @@
 }
 </script>
 
-<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6DM42N1462"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -133,6 +129,8 @@ nav {
 
 @media (max-width: 767px) { nav { padding: 28px 24px; } }
 
+.nav-left { display: flex; flex-direction: column; gap: 4px; }
+
 .nav-brand {
   font-size: 13px;
   font-weight: 600;
@@ -141,6 +139,12 @@ nav {
   color: var(--n100);
   text-decoration: none;
   opacity: 0.9;
+}
+
+.nav-location {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--n500);
 }
 
 .nav-links { display: flex; gap: 36px; list-style: none; }
@@ -171,19 +175,20 @@ nav {
 
 @media (max-width: 767px) { .bottom { padding: 0 24px 32px; } }
 
-.bottom-left { display: flex; flex-direction: column; gap: 4px; }
-
-.collection-label {
+.collection-link {
   font-size: 9px;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--n400);
+  text-decoration: none;
+  border-bottom: 1px solid var(--n500);
+  padding-bottom: 2px;
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
 
-.location-label {
-  font-size: 11px;
-  letter-spacing: 0.08em;
+.collection-link:hover {
   color: var(--n300);
+  border-color: var(--n300);
 }
 
 .bottom-right { display: flex; align-items: center; gap: 16px; }
@@ -250,7 +255,10 @@ nav, .bottom {
 </div>
 
 <nav>
-  <a class="nav-brand" href="/">Earl Kiu</a>
+  <div class="nav-left">
+    <a class="nav-brand" href="/">Earl Kiu</a>
+    <span class="nav-location">Kuala Lumpur, Malaysia</span>
+  </div>
   <ul class="nav-links">
     <li><a href="/" class="active">People</a></li>
     <li><a href="/street.html">Street</a></li>
@@ -259,10 +267,7 @@ nav, .bottom {
 </nav>
 
 <div class="bottom">
-  <div class="bottom-left">
-    <span class="collection-label">People</span>
-    <span class="location-label">Kuala Lumpur, Malaysia</span>
-  </div>
+  <a class="collection-link" href="/collection.html">Collection</a>
 
   <div class="bottom-right">
     <button class="arrow" id="prev" aria-label="Previous">

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The worst thing — Earl Kiu</title>
+<link rel="stylesheet" href="style.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6DM42N1462"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6DM42N1462');
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-left">
+      <a class="nav-brand" href="/">Earl Kiu</a>
+      <span class="nav-location">Writing</span>
+    </div>
+    <a href="index.html" class="back-link">← All</a>
+  </header>
+
+  <main class="entry-body">
+    <div class="entry-meta">
+      <span class="entry-date">May 2026</span>
+    </div>
+    <h1 class="entry-heading">The worst thing</h1>
+    <div class="entry-content">
+      <p>The worst thing a photographer can be, is to forget the person in front of us is a human.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <span>Earl Kiu is a photographer based in Kuala Lumpur.&ensp;<a href="https://earlkiu.com">earlkiu.com</a></span>
+  </footer>
+
+</body>
+</html>

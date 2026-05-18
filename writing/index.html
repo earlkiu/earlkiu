@@ -24,7 +24,7 @@
   </header>
 
   <div class="mobile-back" id="mobile-back" style="display:none;" onclick="goBack()">
-    <span>← All writing</span>
+    <span>&larr; All writing</span>
   </div>
 
   <div class="writing-layout">
@@ -32,9 +32,13 @@
     <nav class="entry-list" id="entry-list">
       <a class="entry" onclick="loadEntry(0)">
         <span class="entry-date">May 2026</span>
-        <span class="entry-title">The worst thing</span>
+        <span class="entry-title">Tending to</span>
       </a>
       <a class="entry" onclick="loadEntry(1)">
+        <span class="entry-date">May 2026</span>
+        <span class="entry-title">The worst thing</span>
+      </a>
+      <a class="entry" onclick="loadEntry(2)">
         <span class="entry-date">May 2026</span>
         <span class="entry-title">Common sense</span>
       </a>
@@ -53,6 +57,11 @@
 
 <script>
   const entries = [
+    {
+      date: 'May 2026',
+      title: 'Tending to',
+      body: '<p>In stillness, I found peace.<br>In silence, I found solitude.</p><p>In this space between &mdash;<br>where no one needs tending to,<br>away from noise,<br>away from popular opinion,<br>I stay true.</p>'
+    },
     {
       date: 'May 2026',
       title: 'The worst thing',
@@ -81,8 +90,8 @@
       <h1 class="entry-heading">${entry.title}</h1>
       <div class="entry-content">${entry.body}</div>
       <nav class="entry-nav">
-        <a class="${prevDisabled}" onclick="navigate(-1)">← Prev</a>
-        <a class="${nextDisabled}" onclick="navigate(1)">Next →</a>
+        <a class="${prevDisabled}" onclick="navigate(-1)">&larr; Prev</a>
+        <a class="${nextDisabled}" onclick="navigate(1)">Next &rarr;</a>
       </nav>
     `;
 

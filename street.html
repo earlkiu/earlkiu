@@ -4,9 +4,37 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Street — Earl Kiu</title>
-<meta name="description" content="Street photography by Earl Kiu. Coming soon.">
-<meta name="robots" content="noindex">
+<meta name="description" content="Street photography by Earl Kiu. Kuala Lumpur, Malaysia.">
+<meta name="author" content="Earl Kiu">
 <link rel="canonical" href="https://www.earlkiu.com/street">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.earlkiu.com/street">
+<meta property="og:title" content="Street — Earl Kiu">
+<meta property="og:description" content="Street photography by Earl Kiu. Kuala Lumpur, Malaysia.">
+<meta property="og:image" content="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779113450/Street-slider-01-L_zhichv.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Street — Earl Kiu">
+<meta name="twitter:description" content="Street photography by Earl Kiu. Kuala Lumpur, Malaysia.">
+<meta name="twitter:image" content="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779113450/Street-slider-01-L_zhichv.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "name": "Street — Earl Kiu",
+  "author": {
+    "@type": "Person",
+    "name": "Earl Kiu",
+    "url": "https://www.earlkiu.com"
+  },
+  "locationCreated": {
+    "@type": "Place",
+    "name": "Kuala Lumpur, Malaysia"
+  }
+}
+</script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6DM42N1462"></script>
 <script>
@@ -38,12 +66,37 @@ body {
   background: var(--n700);
   color: var(--n100);
   font-family: var(--font);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+}
+
+.slider { position: fixed; inset: 0; z-index: 0; }
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.8s ease-in-out;
+  background-size: cover;
+  background-position: center;
+  will-change: opacity;
+}
+
+.slide.active { opacity: 1; }
+
+.slider::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, rgba(16,15,13,0.5) 0%, rgba(16,15,13,0.1) 60%, rgba(16,15,13,0.05) 100%),
+    linear-gradient(to top, rgba(16,15,13,0.7) 0%, transparent 40%);
+  z-index: 1;
+  pointer-events: none;
 }
 
 nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -52,7 +105,7 @@ nav {
 
 @media (max-width: 767px) { nav { padding: 28px 24px; } }
 
-.nav-left { display: flex; flex-direction: column; gap: 4px; }
+.nav-left { display: flex; flex-direction: column; gap: 2px; }
 
 .nav-brand {
   font-size: 13px;
@@ -65,7 +118,7 @@ nav {
 }
 
 .nav-location {
-  font-size: 10px;
+  font-size: 9px;
   letter-spacing: 0.08em;
   color: var(--n500);
 }
@@ -86,36 +139,88 @@ nav {
 .nav-links a:hover,
 .nav-links a.active { color: var(--n100); }
 
-.content { padding: 0 52px 80px; }
+.bottom {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 5;
+  padding: 0 52px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
 
-@media (max-width: 767px) { .content { padding: 0 24px 60px; } }
+@media (max-width: 767px) { .bottom { padding: 0 24px 32px; } }
 
-.label {
-  font-size: 10px;
-  letter-spacing: 0.22em;
+.gallery-link {
+  font-size: 9px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--n500);
-  display: block;
-  margin-bottom: 20px;
+  color: var(--n400);
+  text-decoration: none;
+  border-bottom: 1px solid var(--n500);
+  padding-bottom: 2px;
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
 
-.title {
-  font-size: clamp(28px, 4vw, 48px);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.05;
-  color: var(--n100);
+.gallery-link:hover {
+  color: var(--n300);
+  border-color: var(--n300);
 }
 
-body {
+.bottom-right { display: flex; align-items: center; gap: 16px; }
+
+.arrow {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--n500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  flex-shrink: 0;
+  background: none;
+}
+
+.arrow:hover { border-color: var(--n300); }
+
+.arrow svg {
+  width: 12px;
+  height: 12px;
+  stroke: var(--n300);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.dots { display: flex; gap: 5px; align-items: center; }
+
+.dot {
+  width: 4px;
+  height: 4px;
+  background: var(--n500);
+  cursor: pointer;
+  transition: background 0.4s ease;
+  flex-shrink: 0;
+}
+
+.dot.active { background: var(--n300); }
+
+nav, .bottom {
   opacity: 0;
-  animation: fadeIn 1s ease 0.2s forwards;
+  animation: fadeUp 1.2s ease 0.4s forwards;
 }
 
-@keyframes fadeIn { to { opacity: 1; } }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 </style>
 </head>
 <body>
+
+<div class="slider" id="slider"></div>
 
 <nav>
   <div class="nav-left">
@@ -129,10 +234,96 @@ body {
   </ul>
 </nav>
 
-<div class="content">
-  <span class="label">Street</span>
-  <h1 class="title">Something is<br>coming.</h1>
+<div class="bottom">
+  <a class="gallery-link" href="/gallery.html">Gallery</a>
+  <div class="bottom-right">
+    <button class="arrow" id="prev" aria-label="Previous">
+      <svg viewBox="0 0 12 12"><polyline points="8,2 4,6 8,10"/></svg>
+    </button>
+    <div class="dots" id="dots"></div>
+    <button class="arrow" id="next" aria-label="Next">
+      <svg viewBox="0 0 12 12"><polyline points="4,2 8,6 4,10"/></svg>
+    </button>
+  </div>
 </div>
 
+<script>
+  const isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+  const desktopImages = [
+    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779113456/Street-slider-03-L_cg48bp.jpg',
+    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779113453/Street-slider-04-L_kehxui.jpg',
+    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779113453/Street-slider-05-L_o1y8in.jpg',
+    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779113453/Street-slider-06-L_swtant.jpg',
+    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779113451/Street-slider-02-L_kkyovh.jpg',
+    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779113450/Street-slider-01-L_zhichv.jpg'
+  ];
+
+  const mobileImages = [
+    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779086460/Street-slider-07-P_sa0lzt.jpg',
+    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779086456/Street-slider-03-P_banryt.jpg',
+    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779086453/Street-slider-01-P_mdeeoo.jpg',
+    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779086453/Street-slider-04-P_tkvjel.jpg',
+    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779086450/Street-slider-05-P_pwz6xw.jpg',
+    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779086451/Street-slider-02-P_jetixo.jpg',
+    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779086450/Street-slider-08-P_zprrmy.jpg',
+    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779086450/Street-slider-06-P_kbhvry.jpg'
+  ];
+
+  const images = isMobile ? mobileImages : desktopImages;
+
+  for (let i = images.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [images[i], images[j]] = [images[j], images[i]];
+  }
+
+  const sliderEl = document.getElementById('slider');
+  const dotsContainer = document.getElementById('dots');
+  let current = 0;
+  let timer;
+
+  const slides = images.map((url, i) => {
+    const div = document.createElement('div');
+    div.className = 'slide' + (i === 0 ? ' active' : '');
+    div.style.backgroundImage = `url('${url}')`;
+    sliderEl.appendChild(div);
+    return div;
+  });
+
+  const overlay = document.createElement('div');
+  overlay.style.cssText = 'position:absolute;inset:0;background:linear-gradient(to right,rgba(16,15,13,.5) 0%,rgba(16,15,13,.1) 60%,rgba(16,15,13,.05) 100%),linear-gradient(to top,rgba(16,15,13,.7) 0%,transparent 40%);z-index:1;pointer-events:none;';
+  sliderEl.appendChild(overlay);
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  function getDots() { return document.querySelectorAll('.dot'); }
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    getDots()[current].classList.remove('active');
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    getDots()[current].classList.add('active');
+    clearInterval(timer);
+    timer = setInterval(advance, 6000);
+  }
+
+  function advance() { goTo(current + 1); }
+
+  document.getElementById('prev').addEventListener('click', () => goTo(current - 1));
+  document.getElementById('next').addEventListener('click', () => goTo(current + 1));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') goTo(current - 1);
+    if (e.key === 'ArrowRight') goTo(current + 1);
+  });
+
+  timer = setInterval(advance, 6000);
+</script>
 </body>
 </html>

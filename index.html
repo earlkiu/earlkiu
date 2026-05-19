@@ -85,25 +85,40 @@ body {
 }
 
 .slide.active { opacity: 1; }
+.slide.hidden { display: none; }
 
+/* ── DESKTOP IMAGES (768px+) ── */
 @media (min-width: 768px) {
-  .slide-1 { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033016/People-01-l_bgf9v0.jpg'); }
-  .slide-2 { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033017/People-06-l_woknno.jpg'); }
-  .slide-3 { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779035837/People-03-l_rywmml.jpg'); }
-  .slide-4 { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033017/People-05-l_i1knmn.jpg'); }
-  .slide-5 { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033017/People-04-l_k2jt2c.jpg'); }
-  .slide-6 { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779035771/Poeple-02-l_yasbt8.jpg'); }
-  .slide-7 { display: none; }
+  .slide-d-1  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033016/People-01-l_bgf9v0.jpg'); }
+  .slide-d-2  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033017/People-06-l_woknno.jpg'); }
+  .slide-d-3  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779035837/People-03-l_rywmml.jpg'); }
+  .slide-d-4  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033017/People-05-l_i1knmn.jpg'); }
+  .slide-d-5  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033017/People-04-l_k2jt2c.jpg'); }
+  .slide-d-6  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779035771/Poeple-02-l_yasbt8.jpg'); }
+  /* slots 7-12: add URL and remove .hidden class when ready */
+  .slide-d-7  { display: none; }
+  .slide-d-8  { display: none; }
+  .slide-d-9  { display: none; }
+  .slide-d-10 { display: none; }
+  .slide-d-11 { display: none; }
+  .slide-d-12 { display: none; }
 }
 
+/* ── MOBILE IMAGES (below 768px) ── */
 @media (max-width: 767px) {
-  .slide-1 { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033608/People-01-M_uj8kgs.jpg'); }
-  .slide-2 { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033017/People-06-l_woknno.jpg'); }
-  .slide-3 { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033608/People-03-M_c3z79b.jpg'); }
-  .slide-4 { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033611/People-05-M_sglqws.jpg'); }
-  .slide-5 { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033609/People-04-M_sdjsvl.jpg'); }
-  .slide-6 { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033612/People-02-M_hcfqxh.jpg'); }
-  .slide-7 { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779035913/People-07-M_vqolph.jpg'); }
+  .slide-m-1  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033608/People-01-M_uj8kgs.jpg'); }
+  .slide-m-2  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033017/People-06-l_woknno.jpg'); }
+  .slide-m-3  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033608/People-03-M_c3z79b.jpg'); }
+  .slide-m-4  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033611/People-05-M_sglqws.jpg'); }
+  .slide-m-5  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033609/People-04-M_sdjsvl.jpg'); }
+  .slide-m-6  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779033612/People-02-M_hcfqxh.jpg'); }
+  .slide-m-7  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779035913/People-07-M_vqolph.jpg'); }
+  /* slots 8-12: add URL and remove .hidden class when ready */
+  .slide-m-8  { display: none; }
+  .slide-m-9  { display: none; }
+  .slide-m-10 { display: none; }
+  .slide-m-11 { display: none; }
+  .slide-m-12 { display: none; }
 }
 
 .slider::after {
@@ -127,7 +142,7 @@ nav {
   padding: 40px 52px;
 }
 
-@media (max-width: 767px) { nav { padding: 28px 24px; } }
+@media (max-width: 767px) { nav { padding: 28px 24px; } .nav-left { gap: 2px; } }
 
 .nav-left { display: flex; flex-direction: column; gap: 2px; }
 
@@ -245,13 +260,32 @@ nav, .bottom {
 <body>
 
 <div class="slider" id="slider">
-  <div class="slide slide-1 active"></div>
-  <div class="slide slide-2"></div>
-  <div class="slide slide-3"></div>
-  <div class="slide slide-4"></div>
-  <div class="slide slide-5"></div>
-  <div class="slide slide-6"></div>
-  <div class="slide slide-7"></div>
+  <!-- Desktop slides -->
+  <div class="slide slide-d-1"></div>
+  <div class="slide slide-d-2"></div>
+  <div class="slide slide-d-3"></div>
+  <div class="slide slide-d-4"></div>
+  <div class="slide slide-d-5"></div>
+  <div class="slide slide-d-6"></div>
+  <div class="slide slide-d-7"></div>
+  <div class="slide slide-d-8"></div>
+  <div class="slide slide-d-9"></div>
+  <div class="slide slide-d-10"></div>
+  <div class="slide slide-d-11"></div>
+  <div class="slide slide-d-12"></div>
+  <!-- Mobile slides -->
+  <div class="slide slide-m-1"></div>
+  <div class="slide slide-m-2"></div>
+  <div class="slide slide-m-3"></div>
+  <div class="slide slide-m-4"></div>
+  <div class="slide slide-m-5"></div>
+  <div class="slide slide-m-6"></div>
+  <div class="slide slide-m-7"></div>
+  <div class="slide slide-m-8"></div>
+  <div class="slide slide-m-9"></div>
+  <div class="slide slide-m-10"></div>
+  <div class="slide slide-m-11"></div>
+  <div class="slide slide-m-12"></div>
 </div>
 
 <nav>
@@ -268,7 +302,6 @@ nav, .bottom {
 
 <div class="bottom">
   <a class="collection-link" href="/collection.html">Collection</a>
-
   <div class="bottom-right">
     <button class="arrow" id="prev" aria-label="Previous">
       <svg viewBox="0 0 12 12"><polyline points="8,2 4,6 8,10"/></svg>
@@ -282,9 +315,18 @@ nav, .bottom {
 
 <script>
   const isMobile = window.matchMedia('(max-width: 767px)').matches;
-  const totalSlides = isMobile ? 7 : 6;
-  const allSlides = document.querySelectorAll('.slide');
-  const slides = Array.from(allSlides).slice(0, totalSlides);
+  const prefix = isMobile ? '.slide-m-' : '.slide-d-';
+
+  // Collect only visible slides for current breakpoint
+  const slides = Array.from(document.querySelectorAll('[class*="' + (isMobile ? 'slide-m-' : 'slide-d-') + '"]'))
+    .filter(el => getComputedStyle(el).display !== 'none');
+
+  // Hide all opposite breakpoint slides
+  document.querySelectorAll(isMobile ? '[class*="slide-d-"]' : '[class*="slide-m-"]')
+    .forEach(el => el.style.display = 'none');
+
+  slides[0].classList.add('active');
+
   const dotsContainer = document.getElementById('dots');
   let current = 0;
   let timer;
@@ -317,6 +359,14 @@ nav, .bottom {
     if (e.key === 'ArrowLeft') goTo(current - 1);
     if (e.key === 'ArrowRight') goTo(current + 1);
   });
+
+  // Swipe support
+  let touchStartX = 0;
+  document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  document.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) diff > 0 ? goTo(current + 1) : goTo(current - 1);
+  }, { passive: true });
 
   timer = setInterval(advance, 6000);
 </script>

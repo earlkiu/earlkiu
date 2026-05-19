@@ -83,7 +83,7 @@ nav {
   mix-blend-mode: multiply;
 }
 
-@media (max-width: 767px) { nav { padding: 28px 24px; } }
+@media (max-width: 767px) { nav { padding: 28px 24px; } .nav-left { gap: 2px; } }
 
 .nav-left { display: flex; flex-direction: column; gap: 2px; }
 
@@ -170,15 +170,17 @@ nav {
 .about-bio:last-of-type { margin-bottom: 0; }
 
 .about-footnote {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 400;
   line-height: 1.6;
   color: var(--n400);
-  margin-top: 48px;
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--n200);
 }
 
 .contact-block {
-  margin-top: 72px;
+  margin-top: 56px;
   padding-top: 40px;
   border-top: 1px solid var(--n200);
 }
@@ -203,6 +205,7 @@ nav {
   padding-bottom: 2px;
   transition: border-color 0.3s ease;
   letter-spacing: -0.01em;
+  display: inline-block;
 }
 
 .contact-email:hover { border-color: var(--n700); }
@@ -252,11 +255,11 @@ nav {
     <p class="about-bio">
       I see beauty in people, where every living being denotes a charming nature, concocting beautiful moments between scenes — like characters in an unfolding story. Complex yet vivid, acting their best as if vying for an Emmy nomination.
     </p>
- 
+
     <p class="about-bio">
       Photography is how I stay in those scenes a little longer — long enough to catch what happens when the performance quietly falls away.
     </p>
- 
+
     <p class="about-footnote">
       Currently working in-house, but open to meaningful collaborations that align with this rhythm.
     </p>
@@ -265,7 +268,7 @@ nav {
       <span class="contact-label">Get in touch</span>
       <a class="contact-email" href="mailto:hello@earlkiu.com">hello@earlkiu.com</a>
       <p class="contact-note">Based in Kuala Lumpur, Malaysia.<br>Available for editorial, fashion, and portrait work.</p>
-      <a class="contact-email" href="https://www.instagram.com/earlkiu" target="_blank" rel="noopener" style="margin-top: 16px; display: inline-block;">@earlkiu</a>
+      <a class="contact-email" href="https://www.instagram.com/earlkiu" target="_blank" rel="noopener" style="margin-top: 16px;">@earlkiu</a>
     </div>
   </div>
 </main>

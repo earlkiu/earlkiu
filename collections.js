@@ -10,6 +10,7 @@
 // ─────────────────────────────────────────────
 
 const collections = [
+  {title: 'Denise', url: 'collection/denise-2024-01.html'},
   { title: 'Ming Xuan', url: '/collection/ming-xuan-2025-01.html' },
   { title: 'Zyra',      url: '/collection/zyra-2025-01.html' },
 ];

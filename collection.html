@@ -21,6 +21,9 @@
   gtag('config', 'G-6DM42N1462');
 </script>
 
+<!-- Load collections — must be before main script -->
+<script src="/collections.js"></script>
+
 <style>
 @import url('https://use.typekit.net/pur8tye.css');
 
@@ -45,8 +48,6 @@ body {
   font-family: var(--font);
   min-height: 100vh;
 }
-
-/* ─── NAV ─── */
 
 nav {
   position: fixed;
@@ -94,15 +95,11 @@ nav {
 .nav-links a:hover,
 .nav-links a.active { color: var(--n700); }
 
-/* ─── PAGE ─── */
-
 .page {
   padding: 160px 52px 120px;
 }
 
 @media (max-width: 767px) { .page { padding: 100px 24px 80px; } }
-
-/* ─── HEADER ─── */
 
 .page-label {
   font-size: 10px;
@@ -112,8 +109,6 @@ nav {
   display: block;
   margin-bottom: 64px;
 }
-
-/* ─── GRID ─── */
 
 .grid {
   display: grid;
@@ -164,21 +159,13 @@ nav {
   letter-spacing: -0.01em;
 }
 
-.grid-item-date {
-  font-size: 11px;
-  color: var(--n400);
-  margin-top: 2px;
-  display: block;
-}
-
-/* ─── FADE IN ─── */
-
 nav, .page {
   opacity: 0;
-  animation: fadeIn 1s ease 0.2s forwards;
+  animation: fadeIn 1s ease forwards;
 }
 
 nav { animation-delay: 0s; }
+.page { animation-delay: 0.1s; }
 
 @keyframes fadeIn { to { opacity: 1; } }
 </style>
@@ -201,29 +188,41 @@ nav { animation-delay: 0s; }
 
   <span class="page-label">Collection</span>
 
-  <div class="grid">
-
-    <a class="grid-item" href="/collection/ming-xuan-august-2025.html">
-      <img src="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779116534/Ming_Xuan_14-08-25_0120_vzgmva.jpg" alt="Ming Xuan, August 2025" loading="lazy"/>
-      <div class="grid-item-info">
-        <span class="grid-item-category">People</span>
-        <span class="grid-item-title">Ming Xuan</span>
-        <span class="grid-item-date">August 2025</span>
-      </div>
-    </a>
-
-    <a class="grid-item" href="/collection/zyra-may-2025-01.html">
-      <img src="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779119889/Zyra_03-05-25_10422_x4wroh.jpg" alt="Zyra, May 2025" loading="lazy"/>
-      <div class="grid-item-info">
-        <span class="grid-item-category">People</span>
-        <span class="grid-item-title">Zyra</span>
-        <span class="grid-item-date">May 2025</span>
-      </div>
-    </a>
-
-  </div>
+  <!-- DO NOT TOUCH — grid is built by the script below from collections.js -->
+  <div class="grid" id="collection-grid"></div>
 
 </main>
+
+<script>
+(function () {
+  const grid = document.getElementById('collection-grid');
+
+  // Newest first — reverse the array
+  const ordered = [...collections].reverse();
+
+  ordered.forEach((item, i) => {
+    const a = document.createElement('a');
+    a.className = 'grid-item';
+    a.href = item.url;
+
+    const img = document.createElement('img');
+    img.src = item.cover;
+    img.alt = item.title + ', ' + item.year;
+    img.loading = i === 0 ? 'eager' : 'lazy';
+
+    const info = document.createElement('div');
+    info.className = 'grid-item-info';
+    info.innerHTML = `
+      <span class="grid-item-category">${item.category}</span>
+      <span class="grid-item-title">${item.title}</span>
+    `;
+
+    a.appendChild(img);
+    a.appendChild(info);
+    grid.appendChild(a);
+  });
+})();
+</script>
 
 </body>
 </html>

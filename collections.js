@@ -10,6 +10,6 @@
 // ─────────────────────────────────────────────
 
 const collections = [
-  { title: 'Ming Xuan', url: '/collection/ming-xuan-august-2025.html' },
+  { title: 'Ming Xuan', url: '/collection/ming-xuan-2025-01.html' },
   { title: 'Zyra',      url: '/collection/zyra-2025-01.html' },
 ];

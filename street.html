@@ -6,10 +6,10 @@
 <title>Street — Earl Kiu</title>
 <meta name="description" content="Street photography by Earl Kiu. Kuala Lumpur, Malaysia.">
 <meta name="author" content="Earl Kiu">
-<link rel="canonical" href="https://www.earlkiu.com/street">
+<link rel="canonical" href="https://earlkiu.com/street">
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.earlkiu.com/street">
+<meta property="og:url" content="https://earlkiu.com/street">
 <meta property="og:title" content="Street — Earl Kiu">
 <meta property="og:description" content="Street photography by Earl Kiu. Kuala Lumpur, Malaysia.">
 <meta property="og:image" content="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779113450/Street-slider-01-L_zhichv.jpg">
@@ -24,15 +24,8 @@
   "@context": "https://schema.org",
   "@type": "ImageGallery",
   "name": "Street — Earl Kiu",
-  "author": {
-    "@type": "Person",
-    "name": "Earl Kiu",
-    "url": "https://www.earlkiu.com"
-  },
-  "locationCreated": {
-    "@type": "Place",
-    "name": "Kuala Lumpur, Malaysia"
-  }
+  "author": { "@type": "Person", "name": "Earl Kiu", "url": "https://earlkiu.com" },
+  "locationCreated": { "@type": "Place", "name": "Kuala Lumpur, Malaysia" }
 }
 </script>
 
@@ -82,6 +75,40 @@ body {
 
 .slide.active { opacity: 1; }
 
+/* ── DESKTOP (768px+) ── */
+@media (min-width: 768px) {
+  .slide-d-1  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779113456/Street-slider-03-L_cg48bp.jpg'); }
+  .slide-d-2  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779113453/Street-slider-04-L_kehxui.jpg'); }
+  .slide-d-3  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779113453/Street-slider-05-L_o1y8in.jpg'); }
+  .slide-d-4  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779113453/Street-slider-06-L_swtant.jpg'); }
+  .slide-d-5  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779113451/Street-slider-02-L_kkyovh.jpg'); }
+  .slide-d-6  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779113450/Street-slider-01-L_zhichv.jpg'); }
+  /* slots 7-12: add URL and remove display:none when ready */
+  .slide-d-7  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779372338/Street-slider-07-L_tzpjpx.jpg'); }
+  .slide-d-8  { display: none; }
+  .slide-d-9  { display: none; }
+  .slide-d-10 { display: none; }
+  .slide-d-11 { display: none; }
+  .slide-d-12 { display: none; }
+}
+
+/* ── MOBILE (below 768px) ── */
+@media (max-width: 767px) {
+  .slide-m-1  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779086460/Street-slider-07-P_sa0lzt.jpg'); }
+  .slide-m-2  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779086456/Street-slider-03-P_banryt.jpg'); }
+  .slide-m-3  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779086453/Street-slider-01-P_mdeeoo.jpg'); }
+  .slide-m-4  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779086453/Street-slider-04-P_tkvjel.jpg'); }
+  .slide-m-5  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779086450/Street-slider-05-P_pwz6xw.jpg'); }
+  .slide-m-6  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779086451/Street-slider-02-P_jetixo.jpg'); }
+  .slide-m-7  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779086450/Street-slider-08-P_zprrmy.jpg'); }
+  .slide-m-8  { background-image: url('https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779086450/Street-slider-06-P_kbhvry.jpg'); }
+  /* slots 9-12: add URL and remove display:none when ready */
+  .slide-m-9  { display: none; }
+  .slide-m-10 { display: none; }
+  .slide-m-11 { display: none; }
+  .slide-m-12 { display: none; }
+}
+
 .slider::after {
   content: '';
   position: absolute;
@@ -103,7 +130,7 @@ nav {
   padding: 40px 52px;
 }
 
-@media (max-width: 767px) { nav { padding: 28px 24px; } }
+@media (max-width: 767px) { nav { padding: 28px 24px; } .nav-left { gap: 2px; } }
 
 .nav-left { display: flex; flex-direction: column; gap: 2px; }
 
@@ -162,10 +189,7 @@ nav {
   transition: color 0.3s ease, border-color 0.3s ease;
 }
 
-.gallery-link:hover {
-  color: var(--n300);
-  border-color: var(--n300);
-}
+.gallery-link:hover { color: var(--n300); border-color: var(--n300); }
 
 .bottom-right { display: flex; align-items: center; gap: 16px; }
 
@@ -220,7 +244,32 @@ nav, .bottom {
 </head>
 <body>
 
-<div class="slider" id="slider"></div>
+<div class="slider" id="slider">
+  <div class="slide slide-d-1"></div>
+  <div class="slide slide-d-2"></div>
+  <div class="slide slide-d-3"></div>
+  <div class="slide slide-d-4"></div>
+  <div class="slide slide-d-5"></div>
+  <div class="slide slide-d-6"></div>
+  <div class="slide slide-d-7"></div>
+  <div class="slide slide-d-8"></div>
+  <div class="slide slide-d-9"></div>
+  <div class="slide slide-d-10"></div>
+  <div class="slide slide-d-11"></div>
+  <div class="slide slide-d-12"></div>
+  <div class="slide slide-m-1"></div>
+  <div class="slide slide-m-2"></div>
+  <div class="slide slide-m-3"></div>
+  <div class="slide slide-m-4"></div>
+  <div class="slide slide-m-5"></div>
+  <div class="slide slide-m-6"></div>
+  <div class="slide slide-m-7"></div>
+  <div class="slide slide-m-8"></div>
+  <div class="slide slide-m-9"></div>
+  <div class="slide slide-m-10"></div>
+  <div class="slide slide-m-11"></div>
+  <div class="slide slide-m-12"></div>
+</div>
 
 <nav>
   <div class="nav-left">
@@ -250,49 +299,25 @@ nav, .bottom {
 <script>
   const isMobile = window.matchMedia('(max-width: 767px)').matches;
 
-  const desktopImages = [
-    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779113456/Street-slider-03-L_cg48bp.jpg',
-    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779113453/Street-slider-04-L_kehxui.jpg',
-    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779113453/Street-slider-05-L_o1y8in.jpg',
-    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779113453/Street-slider-06-L_swtant.jpg',
-    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779113451/Street-slider-02-L_kkyovh.jpg',
-    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779113450/Street-slider-01-L_zhichv.jpg'
-  ];
+  // Collect visible slides for current breakpoint
+  const slides = Array.from(document.querySelectorAll('[class*="' + (isMobile ? 'slide-m-' : 'slide-d-') + '"]'))
+    .filter(el => getComputedStyle(el).display !== 'none');
 
-  const mobileImages = [
-    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779086460/Street-slider-07-P_sa0lzt.jpg',
-    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779086456/Street-slider-03-P_banryt.jpg',
-    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779086453/Street-slider-01-P_mdeeoo.jpg',
-    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779086453/Street-slider-04-P_tkvjel.jpg',
-    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779086450/Street-slider-05-P_pwz6xw.jpg',
-    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779086451/Street-slider-02-P_jetixo.jpg',
-    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779086450/Street-slider-08-P_zprrmy.jpg',
-    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779086450/Street-slider-06-P_kbhvry.jpg'
-  ];
+  // Hide opposite breakpoint
+  document.querySelectorAll(isMobile ? '[class*="slide-d-"]' : '[class*="slide-m-"]')
+    .forEach(el => el.style.display = 'none');
 
-  const images = isMobile ? mobileImages : desktopImages;
-
-  for (let i = images.length - 1; i > 0; i--) {
+  // Shuffle for street
+  for (let i = slides.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [images[i], images[j]] = [images[j], images[i]];
+    [slides[i], slides[j]] = [slides[j], slides[i]];
   }
 
-  const sliderEl = document.getElementById('slider');
+  slides[0].classList.add('active');
+
   const dotsContainer = document.getElementById('dots');
   let current = 0;
   let timer;
-
-  const slides = images.map((url, i) => {
-    const div = document.createElement('div');
-    div.className = 'slide' + (i === 0 ? ' active' : '');
-    div.style.backgroundImage = `url('${url}')`;
-    sliderEl.appendChild(div);
-    return div;
-  });
-
-  const overlay = document.createElement('div');
-  overlay.style.cssText = 'position:absolute;inset:0;background:linear-gradient(to right,rgba(16,15,13,.5) 0%,rgba(16,15,13,.1) 60%,rgba(16,15,13,.05) 100%),linear-gradient(to top,rgba(16,15,13,.7) 0%,transparent 40%);z-index:1;pointer-events:none;';
-  sliderEl.appendChild(overlay);
 
   slides.forEach((_, i) => {
     const dot = document.createElement('div');
@@ -322,6 +347,14 @@ nav, .bottom {
     if (e.key === 'ArrowLeft') goTo(current - 1);
     if (e.key === 'ArrowRight') goTo(current + 1);
   });
+
+  // Swipe
+  let touchStartX = 0;
+  document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  document.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) diff > 0 ? goTo(current + 1) : goTo(current - 1);
+  }, { passive: true });
 
   timer = setInterval(advance, 6000);
 </script>

@@ -6,10 +6,10 @@
 <title>About Earl Kiu — Portrait Photographer, Kuala Lumpur</title>
 <meta name="description" content="Earl Kiu is a portrait and fashion photographer based in Kuala Lumpur, Malaysia. Drawn to quiet expression, sculpted light, and the honesty of presence.">
 <meta name="author" content="Earl Kiu">
-<link rel="canonical" href="https://www.earlkiu.com/about">
+<link rel="canonical" href="https://earlkiu.com/about">
 
 <meta property="og:type" content="profile">
-<meta property="og:url" content="https://www.earlkiu.com/about">
+<meta property="og:url" content="https://earlkiu.com/about">
 <meta property="og:title" content="About Earl Kiu — Portrait Photographer, Kuala Lumpur">
 <meta property="og:description" content="Drawn to quiet expression, sculpted light, and the honesty of presence.">
 <meta property="og:image" content="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779037539/about-01_dyecgy.jpg">
@@ -25,7 +25,7 @@
   "@type": "Person",
   "name": "Earl Kiu",
   "jobTitle": "Photographer",
-  "url": "https://www.earlkiu.com",
+  "url": "https://earlkiu.com",
   "image": "https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779037539/about-01_dyecgy.jpg",
   "email": "hello@earlkiu.com",
   "address": {
@@ -83,7 +83,7 @@ nav {
   mix-blend-mode: multiply;
 }
 
-@media (max-width: 767px) { nav { padding: 28px 24px; } }
+@media (max-width: 767px) { nav { padding: 28px 24px; } .nav-left { gap: 2px; } }
 
 .nav-left { display: flex; flex-direction: column; gap: 2px; }
 
@@ -170,15 +170,17 @@ nav {
 .about-bio:last-of-type { margin-bottom: 0; }
 
 .about-footnote {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 400;
   line-height: 1.6;
   color: var(--n400);
-  margin-top: 48px;
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--n200);
 }
 
 .contact-block {
-  margin-top: 72px;
+  margin-top: 56px;
   padding-top: 40px;
   border-top: 1px solid var(--n200);
 }
@@ -203,6 +205,7 @@ nav {
   padding-bottom: 2px;
   transition: border-color 0.3s ease;
   letter-spacing: -0.01em;
+  display: inline-block;
 }
 
 .contact-email:hover { border-color: var(--n700); }
@@ -252,11 +255,11 @@ nav {
     <p class="about-bio">
       I see beauty in people, where every living being denotes a charming nature, concocting beautiful moments between scenes — like characters in an unfolding story. Complex yet vivid, acting their best as if vying for an Emmy nomination.
     </p>
- 
+
     <p class="about-bio">
       Photography is how I stay in those scenes a little longer — long enough to catch what happens when the performance quietly falls away.
     </p>
- 
+
     <p class="about-footnote">
       Currently working in-house, but open to meaningful collaborations that align with this rhythm.
     </p>
@@ -265,7 +268,7 @@ nav {
       <span class="contact-label">Get in touch</span>
       <a class="contact-email" href="mailto:hello@earlkiu.com">hello@earlkiu.com</a>
       <p class="contact-note">Based in Kuala Lumpur, Malaysia.<br>Available for editorial, fashion, and portrait work.</p>
-      <a class="contact-email" href="https://www.instagram.com/earlkiu" target="_blank" rel="noopener" style="margin-top: 16px; display: inline-block;">@earlkiu</a>
+      <a class="contact-email" href="https://www.instagram.com/earlkiu" target="_blank" rel="noopener" style="margin-top: 16px;">@earlkiu</a>
     </div>
   </div>
 </main>

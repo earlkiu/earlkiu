@@ -187,13 +187,11 @@
   @media (max-width: 767px) { .collection-title { font-size: 18px; } }
 
   .collection-nav {
-    display: none;
+    display: flex;
     gap: 20px;
     align-items: baseline;
     margin-top: 12px;
   }
-
-  .collection-nav.visible { display: flex; }
 
   .nav-prev-col, .nav-next-col {
     font-size: 10px;
@@ -235,7 +233,7 @@
     border: none;
     font-family: var(--font);
     font-size: 20px;
-    color: var(--n300);
+    color: var(--n400);
     cursor: pointer;
     padding: 20px;
     transition: color 0.2s ease;
@@ -299,7 +297,6 @@
 <script>
   const slides = Array.from(document.querySelectorAll('.slide'));
   const counter = document.getElementById('counter');
-  const collectionNav = document.getElementById('collection-nav');
   const navPrevCol = document.getElementById('nav-prev-col');
   const navNextCol = document.getElementById('nav-next-col');
   const prev = document.getElementById('prev');
@@ -331,11 +328,6 @@
     counter.textContent = (current + 1) + ' / ' + total;
     prev.className = 'arrow arrow-prev' + (current === 0 ? ' disabled' : '');
     next.className = 'arrow arrow-next' + (current === total - 1 ? ' disabled' : '');
-    if (current === total - 1) {
-      collectionNav.classList.add('visible');
-    } else {
-      collectionNav.classList.remove('visible');
-    }
   }
 
   prev.addEventListener('click', () => { if (current > 0) goTo(current - 1); });

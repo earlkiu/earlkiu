@@ -150,6 +150,7 @@
 
   .credits-list a:hover { color: var(--n700); border-color: var(--n400); }
 
+  /* BOTTOM BAR */
   .bottom-bar {
     position: fixed;
     bottom: 40px;
@@ -186,6 +187,7 @@
 
   @media (max-width: 767px) { .collection-title { font-size: 18px; } }
 
+  /* COLLECTION NAV — always visible */
   .collection-nav {
     display: flex;
     gap: 20px;
@@ -224,6 +226,7 @@
 
   @media (max-width: 767px) { .slide-counter { font-size: 9px; } }
 
+  /* SLIDE ARROWS — desktop only */
   .arrow {
     position: fixed;
     top: 50%;
@@ -233,7 +236,7 @@
     border: none;
     font-family: var(--font);
     font-size: 20px;
-    color: var(--n400);
+    color: var(--n300);
     cursor: pointer;
     padding: 20px;
     transition: color 0.2s ease;
@@ -245,7 +248,11 @@
   .arrow-prev { left: 12px; }
   .arrow-next { right: 12px; }
 
-  @media (max-width: 767px) { .arrow { display: none; } }
+  @media (max-width: 767px) {
+    .arrow { font-size: 16px; padding: 12px; color: var(--n300); }
+    .arrow-prev { left: 0; }
+    .arrow-next { right: 0; }
+  }
 </style>
 </head>
 <body>
@@ -304,6 +311,7 @@
   const total = slides.length;
   let current = 0;
 
+  // Wire up prev/next from collections.js — always visible
   (function () {
     const currentPath = window.location.pathname.replace(/\/$/, '');
     const index = collections.findIndex(c => c.url.replace(/\/$/, '') === currentPath);

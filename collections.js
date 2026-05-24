@@ -24,7 +24,6 @@ const collections = [
     year:     '2025',
     cover:    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779119897/Zyra_03-05-25_10526_ivngdo.jpg'
   },
-  
   {
     title:    'Ming Xuan',
     url:      '/collection/ming-xuan-2025-01.html',

@@ -199,9 +199,6 @@ nav { animation-delay: 0s; }
 (function () {
   const grid = document.getElementById('collection-grid');
 
-  // Newest first — reverse the array
-  const ordered = [...collections].reverse();
-
   ordered.forEach((item, i) => {
     const a = document.createElement('a');
     a.className = 'grid-item';

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cindy Lee, 2023 — Earl Kiu</title>
+<meta name="description" content="Cindy Lee, 2023 — People. Portrait photography by Earl Kiu, Kuala Lumpur.">
+<meta name="author" content="Earl Kiu">
+<link rel="canonical" href="https://earlkiu.com/collection/cindy-lee-2023-01">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<meta property="og:url" content="https://earlkiu.com/collection/zyra-2025-01">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cindy Lee, 2023 — Earl Kiu">
+<meta property="og:image" content="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779692573/Cindy-03-05-23-2335_qlayth.jpg">
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6DM42N1462"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6DM42N1462');
+</script>
+<script src="/collections.js"></script>
+
+<link rel="stylesheet" href="https://use.typekit.net/pur8tye.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --n100: #F2F0ED;
+    --n200: #DDDAD6;
+    --n300: #B0ACA7;
+    --n400: #7A7672;
+    --n500: #3F3D3A;
+    --n600: #1E1C1A;
+    --n700: #100F0D;
+    --font: "artifex-hand-cf", Georgia, serif;
+  }
+
+  html, body {
+    background: var(--n100);
+    color: var(--n700);
+    font-family: var(--font);
+    height: 100%;
+    overflow: hidden;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px 52px;
+    mix-blend-mode: multiply;
+  }
+
+  @media (max-width: 767px) { nav { padding: 28px 24px; } }
+
+  .nav-left { display: flex; flex-direction: column; gap: 2px; }
+
+  .nav-brand {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--n700);
+    text-decoration: none;
+  }
+
+  .nav-location {
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    color: var(--n300);
+  }
+
+  .nav-back {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--n400);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .nav-back:hover { color: var(--n700); }
+
+  .slider { position: fixed; inset: 0; }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 80px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+
+  @media (max-width: 767px) { .slide { padding: 88px 48px; } }
+
+  .slide.active { opacity: 1; pointer-events: auto; }
+
+  .slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .slide-credits {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .credits-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--n300);
+    display: block;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .credits-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .credits-list span {
+    font-size: 13px;
+    color: var(--n400);
+    letter-spacing: 0.04em;
+  }
+
+  .credits-list a {
+    color: var(--n400);
+    text-decoration: none;
+    border-bottom: 1px solid var(--n200);
+    padding-bottom: 1px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .credits-list a:hover { color: var(--n700); border-color: var(--n400); }
+
+  /* BOTTOM BAR */
+  .bottom-bar {
+    position: fixed;
+    bottom: 40px;
+    left: 52px;
+    right: 52px;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  @media (max-width: 767px) { .bottom-bar { bottom: 28px; left: 24px; right: 24px; } }
+
+  .bottom-left { display: flex; flex-direction: column; }
+
+  .collection-meta { display: flex; flex-direction: column; gap: 4px; }
+
+  .collection-category {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--n400);
+  }
+
+  @media (max-width: 767px) { .collection-category { font-size: 9px; } }
+
+  .collection-title {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--n700);
+    line-height: 1.1;
+  }
+
+  @media (max-width: 767px) { .collection-title { font-size: 18px; } }
+
+  /* COLLECTION NAV — always visible */
+  .collection-nav {
+    display: flex;
+    gap: 20px;
+    align-items: baseline;
+    margin-top: 12px;
+  }
+
+  .nav-prev-col, .nav-next-col {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  @media (max-width: 767px) { .nav-prev-col, .nav-next-col { font-size: 9px; } }
+
+  .nav-prev-col { color: var(--n300); }
+
+  .nav-next-col {
+    color: var(--n400);
+    border-bottom: 1px solid var(--n200);
+    padding-bottom: 1px;
+  }
+
+  .nav-prev-col:hover { color: var(--n400); }
+  .nav-next-col:hover { color: var(--n700); border-color: var(--n400); }
+
+  .nav-prev-col.hidden, .nav-next-col.hidden { display: none; }
+
+  .slide-counter {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--n400);
+  }
+
+  @media (max-width: 767px) { .slide-counter { font-size: 9px; } }
+
+  /* SLIDE ARROWS — desktop only */
+  .arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: none;
+    border: none;
+    font-family: var(--font);
+    font-size: 20px;
+    color: var(--n300);
+    cursor: pointer;
+    padding: 20px;
+    transition: color 0.2s ease;
+    user-select: none;
+  }
+
+  .arrow:hover { color: var(--n700); }
+  .arrow.disabled { color: var(--n200); pointer-events: none; }
+  .arrow-prev { left: 12px; }
+  .arrow-next { right: 12px; }
+
+  @media (max-width: 767px) {
+    .arrow { font-size: 16px; padding: 12px; color: var(--n300); }
+    .arrow-prev { left: 8px; }
+    .arrow-next { right: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <a class="nav-brand" href="/">Earl Kiu</a>
+    <span class="nav-location">Kuala Lumpur, Malaysia</span>
+  </div>
+  <a class="nav-back" href="/collection.html">← Collection</a>
+</nav>
+
+<div class="slider" id="slider">
+  <div class="slide active"><img src="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779692573/Cindy-03-05-23-2335_qlayth.jpg" alt="Cindy Lee 2023 — Earl Kiu" /></div>
+  <div class="slide"><img src="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779692573/Cindy_03-05-23_2304_znqwyc.jpg" alt="Cindy Lee 2023 — Earl Kiu" loading="lazy" /></div>
+  <div class="slide"><img src="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779692572/Cindy-03-05-23-2473_cofmlq.jpg" alt="Cindy Lee 2023 — Earl Kiu" loading="lazy" /></div>
+  <div class="slide"><img src="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779692573/Cindy-03-05-23-2897_rzo3ej.jpg" alt="Cindy Lee 2023 — Earl Kiu" loading="lazy" /></div>
+  <div class="slide"><img src="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779692573/Cindy_03-05-23_2459_ldsauv.jpg" alt="Cindy Lee 2023 — Earl Kiu" loading="lazy" /></div>
+  <div class="slide"><img src="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779692574/Cindy-03-05-23-2648_maqz6a.jpg" alt="Cindy Lee 2023 — Earl Kiu" loading="lazy" /></div>
+  <div class="slide"><img src="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779692574/Cindy-03-05-23-2517_tphwki.jpg" alt="Cindy Lee 2023 — Earl Kiu" loading="lazy" /></div>
+  <div class="slide"><img src="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779692573/Cindy-03-05-23-2747_ossgy2.jpg" alt="Cindy Lee 2023 — Earl Kiu" loading="lazy" /></div>
+
+  <div class="slide slide-credits">
+    <div>
+      <span class="credits-label">Credits</span>
+      <div class="credits-list">
+        <span>Talent — <a href="https://www.instagram.com/dleeeeee_/" target="_blank" rel="noopener">Cindy Lee</a></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-bar">
+  <div class="bottom-left">
+    <div class="collection-meta">
+      <span class="collection-category">People · 2023</span>
+      <h1 class="collection-title">Cindy Lee</h1>
+    </div>
+    <div class="collection-nav" id="collection-nav">
+      <a class="nav-prev-col hidden" id="nav-prev-col" href="#">← </a>
+      <a class="nav-next-col hidden" id="nav-next-col" href="#"> →</a>
+    </div>
+  </div>
+  <span class="slide-counter" id="counter">1 / 7</span>
+</div>
+
+<button class="arrow arrow-prev disabled" id="prev">&#8592;</button>
+<button class="arrow arrow-next" id="next">&#8594;</button>
+
+<script>
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const counter = document.getElementById('counter');
+  const navPrevCol = document.getElementById('nav-prev-col');
+  const navNextCol = document.getElementById('nav-next-col');
+  const prev = document.getElementById('prev');
+  const next = document.getElementById('next');
+  const total = slides.length;
+  let current = 0;
+
+  // Wire up prev/next from collections.js — always visible
+  (function () {
+    const currentPath = window.location.pathname.replace(/\/$/, '');
+    const index = collections.findIndex(c => c.url.replace(/\/$/, '') === currentPath);
+
+    if (index > 0) {
+      navPrevCol.href = collections[index - 1].url;
+      navPrevCol.textContent = '\u2190 ' + collections[index - 1].title;
+      navPrevCol.classList.remove('hidden');
+    }
+
+    if (index < collections.length - 1) {
+      navNextCol.href = collections[index + 1].url;
+      navNextCol.textContent = collections[index + 1].title + ' \u2192';
+      navNextCol.classList.remove('hidden');
+    }
+  })();
+
+  function goTo(i) {
+    slides[current].classList.remove('active');
+    current = i;
+    slides[current].classList.add('active');
+    counter.textContent = (current + 1) + ' / ' + total;
+    prev.className = 'arrow arrow-prev' + (current === 0 ? ' disabled' : '');
+    next.className = 'arrow arrow-next' + (current === total - 1 ? ' disabled' : '');
+  }
+
+  prev.addEventListener('click', () => { if (current > 0) goTo(current - 1); });
+  next.addEventListener('click', () => { if (current < total - 1) goTo(current + 1); });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft' && current > 0) goTo(current - 1);
+    if (e.key === 'ArrowRight' && current < total - 1) goTo(current + 1);
+  });
+
+  let tx = 0;
+  document.getElementById('slider').addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+  document.getElementById('slider').addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - tx;
+    if (Math.abs(dx) > 40) {
+      if (dx < 0 && current < total - 1) goTo(current + 1);
+      if (dx > 0 && current > 0) goTo(current - 1);
+    }
+  }, { passive: true });
+</script>
+</body>
+</html>

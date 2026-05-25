@@ -7,11 +7,13 @@
 <meta name="description" content="Ming Xuan, 2025 — People. Portrait photography by Earl Kiu, Kuala Lumpur.">
 <meta name="author" content="Earl Kiu">
 <link rel="canonical" href="https://earlkiu.com/collection/ming-xuan-2025-01">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
 <meta property="og:url" content="https://earlkiu.com/collection/ming-xuan-2025-01">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ming Xuan, 2025 — Earl Kiu">
 <meta property="og:image" content="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779116539/Ming-Xuan-14-08-25-0087_k8gptw.jpg">
-
+  
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6DM42N1462"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -187,13 +189,11 @@
   @media (max-width: 767px) { .collection-title { font-size: 18px; } }
 
   .collection-nav {
-    display: none;
+    display: flex;
     gap: 20px;
     align-items: baseline;
     margin-top: 12px;
   }
-
-  .collection-nav.visible { display: flex; }
 
   .nav-prev-col, .nav-next-col {
     font-size: 10px;
@@ -247,7 +247,11 @@
   .arrow-prev { left: 12px; }
   .arrow-next { right: 12px; }
 
-  @media (max-width: 767px) { .arrow { display: none; } }
+  @media (max-width: 767px) {
+    .arrow { font-size: 16px; padding: 12px; color: var(--n300); }
+    .arrow-prev { left: 8px; }
+    .arrow-next { right: 8px; }
+  }
 </style>
 </head>
 <body>
@@ -286,7 +290,7 @@
       <span class="collection-category">People · 2025</span>
       <h1 class="collection-title">Ming Xuan</h1>
     </div>
-    <div class="collection-nav" id="collection-nav">
+    <div class="collection-nav">
       <a class="nav-prev-col hidden" id="nav-prev-col" href="#">← </a>
       <a class="nav-next-col hidden" id="nav-next-col" href="#"> →</a>
     </div>
@@ -300,7 +304,6 @@
 <script>
   const slides = Array.from(document.querySelectorAll('.slide'));
   const counter = document.getElementById('counter');
-  const collectionNav = document.getElementById('collection-nav');
   const navPrevCol = document.getElementById('nav-prev-col');
   const navNextCol = document.getElementById('nav-next-col');
   const prev = document.getElementById('prev');
@@ -314,13 +317,13 @@
 
     if (index > 0) {
       navPrevCol.href = collections[index - 1].url;
-      navPrevCol.textContent = '\u2190 ' + collections[index - 1].title;
+      navPrevCol.textContent = '← ' + collections[index - 1].title;
       navPrevCol.classList.remove('hidden');
     }
 
     if (index < collections.length - 1) {
       navNextCol.href = collections[index + 1].url;
-      navNextCol.textContent = collections[index + 1].title + ' \u2192';
+      navNextCol.textContent = collections[index + 1].title + ' →';
       navNextCol.classList.remove('hidden');
     }
   })();
@@ -332,11 +335,6 @@
     counter.textContent = (current + 1) + ' / ' + total;
     prev.className = 'arrow arrow-prev' + (current === 0 ? ' disabled' : '');
     next.className = 'arrow arrow-next' + (current === total - 1 ? ' disabled' : '');
-    if (current === total - 1) {
-      collectionNav.classList.add('visible');
-    } else {
-      collectionNav.classList.remove('visible');
-    }
   }
 
   prev.addEventListener('click', () => { if (current > 0) goTo(current - 1); });

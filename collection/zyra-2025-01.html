@@ -7,11 +7,13 @@
 <meta name="description" content="Zyra, 2025 — People. Portrait photography by Earl Kiu, Kuala Lumpur.">
 <meta name="author" content="Earl Kiu">
 <link rel="canonical" href="https://earlkiu.com/collection/zyra-2025-01">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
 <meta property="og:url" content="https://earlkiu.com/collection/zyra-2025-01">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Zyra, 2025 — Earl Kiu">
 <meta property="og:image" content="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779119897/Zyra_03-05-25_10526_ivngdo.jpg">
-
+  
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6DM42N1462"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -150,6 +152,7 @@
 
   .credits-list a:hover { color: var(--n700); border-color: var(--n400); }
 
+  /* BOTTOM BAR */
   .bottom-bar {
     position: fixed;
     bottom: 40px;
@@ -186,14 +189,13 @@
 
   @media (max-width: 767px) { .collection-title { font-size: 18px; } }
 
+  /* COLLECTION NAV — always visible */
   .collection-nav {
-    display: none;
+    display: flex;
     gap: 20px;
     align-items: baseline;
     margin-top: 12px;
   }
-
-  .collection-nav.visible { display: flex; }
 
   .nav-prev-col, .nav-next-col {
     font-size: 10px;
@@ -226,6 +228,7 @@
 
   @media (max-width: 767px) { .slide-counter { font-size: 9px; } }
 
+  /* SLIDE ARROWS — desktop only */
   .arrow {
     position: fixed;
     top: 50%;
@@ -247,7 +250,11 @@
   .arrow-prev { left: 12px; }
   .arrow-next { right: 12px; }
 
-  @media (max-width: 767px) { .arrow { display: none; } }
+  @media (max-width: 767px) {
+    .arrow { font-size: 16px; padding: 12px; color: var(--n300); }
+    .arrow-prev { left: 8px; }
+    .arrow-next { right: 8px; }
+  }
 </style>
 </head>
 <body>
@@ -299,7 +306,6 @@
 <script>
   const slides = Array.from(document.querySelectorAll('.slide'));
   const counter = document.getElementById('counter');
-  const collectionNav = document.getElementById('collection-nav');
   const navPrevCol = document.getElementById('nav-prev-col');
   const navNextCol = document.getElementById('nav-next-col');
   const prev = document.getElementById('prev');
@@ -307,6 +313,7 @@
   const total = slides.length;
   let current = 0;
 
+  // Wire up prev/next from collections.js — always visible
   (function () {
     const currentPath = window.location.pathname.replace(/\/$/, '');
     const index = collections.findIndex(c => c.url.replace(/\/$/, '') === currentPath);
@@ -331,11 +338,6 @@
     counter.textContent = (current + 1) + ' / ' + total;
     prev.className = 'arrow arrow-prev' + (current === 0 ? ' disabled' : '');
     next.className = 'arrow arrow-next' + (current === total - 1 ? ' disabled' : '');
-    if (current === total - 1) {
-      collectionNav.classList.add('visible');
-    } else {
-      collectionNav.classList.remove('visible');
-    }
   }
 
   prev.addEventListener('click', () => { if (current > 0) goTo(current - 1); });

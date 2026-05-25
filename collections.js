@@ -38,4 +38,11 @@ const collections = [
     year:     '2024',
     cover:    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779382053/Denise_28-04-24_5451_fhm8jy.jpg'
   },
+  {
+    title:    'Cindy Lee',
+    url:      '/collection/cindy-lee-2023-01.html',
+    category: 'People',
+    year:     '2023',
+    cover:    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779692573/Cindy-03-05-23-2335_qlayth.jpg'
+  },
 ];

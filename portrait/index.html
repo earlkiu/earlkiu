@@ -432,15 +432,19 @@ footer {
       <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
       <div class="field">
         <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" required autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required autocomplete="email" inputmode="email">
       </div>
       <div class="field">
         <label for="instagram">Instagram</label>
-        <input type="text" id="instagram" name="instagram" placeholder="@">
+        <input type="text" id="instagram" name="instagram" placeholder="@" autocomplete="off">
       </div>
       <div class="field">
         <label for="about">Who are you, and how do you want to be seen?</label>
-        <textarea id="about" name="about" required placeholder="A few sentences is enough."></textarea>
+        <textarea id="about" name="about" required minlength="80" placeholder="A few sentences is enough."></textarea>
       </div>
       <button class="submit-btn" type="submit">Send</button>
     </form>

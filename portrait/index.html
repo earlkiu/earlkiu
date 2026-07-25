@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portrait Sessions — Earl Kiu</title>
+<meta name="description" content="A portrait session produced like an editorial campaign. Six images, curated. Kuala Lumpur.">
+<meta name="author" content="Earl Kiu">
+
+<link rel="canonical" href="https://portrait.earlkiu.com/">
+<meta property="og:url" content="https://portrait.earlkiu.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Portrait Sessions — Earl Kiu">
+<meta property="og:image" content="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779770843/Sneha-Shaw-23-07-23-3307_yvjmoo.jpg">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6DM42N1462"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6DM42N1462');
+</script>
+
+<style>
+@import url('https://use.typekit.net/pur8tye.css');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --n100: #F2F0ED;
+  --n200: #DDDAD6;
+  --n300: #B0ACA7;
+  --n400: #7A7672;
+  --n500: #3F3D3A;
+  --n600: #1E1C1A;
+  --n700: #100F0D;
+  --font: 'artifex-hand-cf', Georgia, serif;
+}
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  background: var(--n700);
+  color: var(--n100);
+  font-family: var(--font);
+  line-height: 1.6;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px 52px;
+}
+
+@media (max-width: 767px) { nav { padding: 28px 24px; } }
+
+.nav-left { display: flex; flex-direction: column; gap: 2px; }
+
+.nav-brand {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--n100);
+  text-decoration: none;
+}
+
+.nav-location {
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--n500);
+}
+
+/* ── Hero ── */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(16,15,13,0.82) 0%, rgba(16,15,13,0.25) 40%, rgba(16,15,13,0) 65%);
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 64px;
+  left: 52px;
+  right: 52px;
+  z-index: 2;
+}
+
+@media (max-width: 767px) { .hero-content { bottom: 48px; left: 24px; right: 24px; } }
+
+.hero-title {
+  font-size: clamp(30px, 4.6vw, 56px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--n100);
+  max-width: 15em;
+}
+
+.hero-sub {
+  margin-top: 14px;
+  font-size: clamp(16px, 1.8vw, 20px);
+  color: var(--n300);
+}
+
+/* ── Sections ── */
+
+section { padding: 120px 52px; }
+
+@media (max-width: 767px) { section { padding: 88px 24px; } }
+
+.measure { max-width: 620px; margin: 0 auto; }
+
+.section-label {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--n400);
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* ── Statement ── */
+
+.statement p {
+  font-size: clamp(20px, 2.4vw, 28px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  color: var(--n100);
+}
+
+.statement .quiet {
+  margin-top: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--n300);
+  line-height: 1.7;
+}
+
+/* ── Image strip (placeholder — hidden until URLs wired in) ── */
+
+.image-strip {
+  display: none; /* remove when strip images are ready */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+  padding: 0;
+}
+
+.image-strip img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 767px) { .image-strip { grid-template-columns: repeat(2, 1fr); } }
+
+/* ── Process ── */
+
+.process h2 {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--n100);
+  margin-bottom: 28px;
+}
+
+.process p {
+  font-size: 17px;
+  color: var(--n300);
+  line-height: 1.75;
+}
+
+/* ── Full-width break (placeholder — hidden until URL wired in) ── */
+
+.full-break {
+  display: none; /* remove when break image is ready */
+  padding: 0;
+}
+
+.full-break img {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Pricing ── */
+
+.pricing-tiers {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 8px;
+}
+
+.tier-recommended .tier-name {
+  font-size: clamp(22px, 2.6vw, 30px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--n100);
+}
+
+.tier-recommended .tier-detail {
+  margin-top: 8px;
+  font-size: 16px;
+  color: var(--n300);
+}
+
+.tier-base .tier-name {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--n400);
+}
+
+.tier-base .tier-detail {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--n400);
+}
+
+.pricing-notes {
+  margin-top: 48px;
+  padding-top: 28px;
+  border-top: 1px solid var(--n600);
+  font-size: 13px;
+  color: var(--n400);
+  line-height: 1.8;
+}
+
+/* ── Form ── */
+
+.contact h2 {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--n100);
+  margin-bottom: 12px;
+}
+
+.contact .lead {
+  font-size: 16px;
+  color: var(--n300);
+  margin-bottom: 44px;
+}
+
+.field { margin-bottom: 28px; }
+
+.field label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--n400);
+  margin-bottom: 10px;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--n500);
+  color: var(--n100);
+  font-family: var(--font);
+  font-size: 16px;
+  padding: 8px 0 12px;
+  border-radius: 0;
+  transition: border-color 0.3s ease;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--n300);
+}
+
+.field textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
+
+.field ::placeholder { color: var(--n500); }
+
+.submit-btn {
+  margin-top: 12px;
+  background: var(--n100);
+  color: var(--n700);
+  border: none;
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover { background: var(--n200); }
+
+/* ── Footer ── */
+
+footer {
+  padding: 56px 52px 64px;
+  border-top: 1px solid var(--n600);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media (max-width: 767px) { footer { padding: 44px 24px 56px; flex-direction: column; align-items: flex-start; } }
+
+.footer-line { font-size: 12px; color: var(--n400); letter-spacing: 0.04em; }
+
+.footer-line a {
+  color: var(--n300);
+  text-decoration: none;
+  border-bottom: 1px solid var(--n500);
+  padding-bottom: 1px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.footer-line a:hover { color: var(--n100); border-color: var(--n300); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <a class="nav-brand" href="https://earlkiu.com">Earl Kiu</a>
+    <span class="nav-location">Kuala Lumpur, Malaysia</span>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<header class="hero">
+  <picture>
+    <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779771467/95441_mbbjb2.jpg">
+    <img class="hero-img"
+      src="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779770843/Sneha-Shaw-23-07-23-3307_yvjmoo.jpg"
+      alt="Portrait — Earl Kiu" />
+  </picture>
+  <div class="hero-content">
+    <h1 class="hero-title">Most people have never been photographed.</h1>
+    <p class="hero-sub">They've been posed.</p>
+  </div>
+</header>
+
+<!-- ── Statement ── -->
+<section class="statement">
+  <div class="measure">
+    <span class="section-label">The Session</span>
+    <p>A portrait session, produced like an editorial campaign — yours.</p>
+    <p class="quiet">Not a studio package. Before we shoot, we talk — who you are, what you carry, who you want to be in front of the lens. From that conversation I build a mood board, a character, a set. Then you step into it.</p>
+  </div>
+</section>
+
+<!-- ── Image strip (hidden until URLs wired in) ── -->
+<section class="image-strip">
+  <img src="PASTE_STRIP_URL_1" alt="Portrait — Earl Kiu" loading="lazy" />
+  <img src="PASTE_STRIP_URL_2" alt="Portrait — Earl Kiu" loading="lazy" />
+  <img src="PASTE_STRIP_URL_3" alt="Portrait — Earl Kiu" loading="lazy" />
+  <img src="PASTE_STRIP_URL_4" alt="Portrait — Earl Kiu" loading="lazy" />
+</section>
+
+<!-- ── Process ── -->
+<section class="process">
+  <div class="measure">
+    <span class="section-label">How It Works</span>
+    <h2>Imagine yourself as a character. What's the story you want to tell?</h2>
+    <p>Every living being carries a charming nature — beautiful moments waiting between scenes. Complex yet vivid, like characters in an unfolding story. I build the set. You bring the character. I shoot what happens in between.</p>
+  </div>
+</section>
+
+<!-- ── Full-width break (hidden until URL wired in) ── -->
+<section class="full-break">
+  <img src="PASTE_BREAK_URL" alt="Portrait — Earl Kiu" loading="lazy" />
+</section>
+
+<!-- ── Pricing ── -->
+<section class="pricing">
+  <div class="measure">
+    <span class="section-label">Sessions</span>
+    <div class="pricing-tiers">
+      <div class="tier-recommended">
+        <div class="tier-name">With makeup artist — RM1,800</div>
+        <div class="tier-detail">Four hours. Six images, curated.</div>
+      </div>
+      <div class="tier-base">
+        <div class="tier-name">Without makeup — RM1,200</div>
+        <div class="tier-detail">Two hours. Six images.</div>
+      </div>
+    </div>
+    <p class="pricing-notes">Six images per session, curated by me. No add-ons — if you want more, we shoot again. Commercial licensing on request. Private studio, Kuala Lumpur — location confirmed on booking.</p>
+  </div>
+</section>
+
+<!-- ── Form ── -->
+<section class="contact" id="introduce">
+  <div class="measure">
+    <h2>Introduce yourself</h2>
+    <p class="lead">No pitch needed. Just tell me who you are.</p>
+    <form name="portrait-inquiry" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="portrait-inquiry">
+      <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required autocomplete="email" inputmode="email">
+      </div>
+      <div class="field">
+        <label for="instagram">Instagram</label>
+        <input type="text" id="instagram" name="instagram" placeholder="@" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="about">Who are you, and how do you want to be seen?</label>
+        <textarea id="about" name="about" required minlength="80" placeholder="A few sentences is enough."></textarea>
+      </div>
+      <button class="submit-btn" type="submit">Send</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-line"><a href="mailto:hello@earlkiu.com">hello@earlkiu.com</a></span>
+  <span class="footer-line">Kuala Lumpur, Malaysia · <a href="https://www.instagram.com/earlkiu" target="_blank" rel="noopener">@earlkiu</a></span>
+</footer>
+
+</body>
+</html>

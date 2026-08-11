@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://earlkiu.com/</loc>
-    <lastmod>2026-05-22</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -20,25 +20,31 @@
   </url>
   <url>
     <loc>https://earlkiu.com/collection</loc>
-    <lastmod>2026-05-22</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://earlkiu.com/collection/denise-2024-01</loc>
-    <lastmod>2026-05-22</lastmod>
+    <loc>https://earlkiu.com/collection/zyra-2025-05</loc>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://earlkiu.com/collection/ming-xuan-2025-01</loc>
-    <lastmod>2026-05-22</lastmod>
+    <loc>https://earlkiu.com/collection/ming-xuan-2025-08</loc>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://earlkiu.com/collection/zyra-2025-01</loc>
-    <lastmod>2026-05-22</lastmod>
+    <loc>https://earlkiu.com/collection/denise-2024-04</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://earlkiu.com/collection/cindy-lee-2023-05</loc>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>

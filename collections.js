@@ -1,7 +1,10 @@
 // ─────────────────────────────────────────────
 // COLLECTIONS — Single source of truth
 //
-// Add new collections here in chronological order, newest last.
+// Paste new collections anywhere in the array — order is handled
+// automatically by the sort at the bottom of this file (newest first,
+// by `year`). Do not hand-order entries; it will be overwritten.
+//
 // This file drives:
 //   1. Prev/Next navigation on every individual collection page
 //   2. The grid on collection.html — auto-builds from this array
@@ -47,4 +50,15 @@ const collections = [
     year:     '2023/05',
     cover:    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779692573/Cindy-03-05-23-2335_qlayth.jpg'
   },
+  {
+    title:    'Sneha Shaw',
+    url:      '/collection/sneha-shaw-2023-07.html',
+    category: 'People',
+    year:     '2023/07',
+    cover:    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1786459480/Sneha_Shaw_23-07-23_3606_1_qo65ob.jpg'
+  },
 ];
+
+// Newest first, by shoot month. Keeps the grid and the prev/next nav
+// from ever drifting apart — both read this array.
+collections.sort((a, b) => b.year.localeCompare(a.year));

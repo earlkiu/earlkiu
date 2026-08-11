@@ -9,3 +9,20 @@
 /collection/cindy-lee-2023-01.html   /collection/cindy-lee-2023-05.html   301
 /collection/sneha-shaw-2023-01        /collection/sneha-shaw-2023-07.html  301
 /collection/sneha-shaw-2023-01.html   /collection/sneha-shaw-2023-07.html  301
+
+# ── Subdomain folders ─────────────────────────────────────────────────────
+# writing/ and portrait/ are published as their own Netlify sites from this
+# same repo, but the folders also sit inside this site's root deploy.
+#
+# This site is the portfolio — for creative directors and hiring. Writing and
+# the portrait offer deliberately do not exist as paths here, so these return
+# a hard 404 rather than forwarding to the subdomains.
+#
+# The ! is mandatory: the static files exist at these paths and would shadow
+# an unforced rule.
+
+/writing           /404.html   404!
+/writing/*         /404.html   404!
+
+/portrait          /404.html   404!
+/portrait/*        /404.html   404!

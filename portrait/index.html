@@ -12,7 +12,7 @@
 <meta property="og:url" content="https://portrait.earlkiu.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Portrait Sessions — Earl Kiu">
-<meta property="og:image" content="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779770843/Sneha-Shaw-23-07-23-3307_yvjmoo.jpg">
+<meta property="og:image" content="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1786470891/EB_-Alt-Coded-by-Wawa-10528-1_lflzey.jpg">
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
@@ -96,6 +96,12 @@ nav {
   object-position: left center;
 }
 
+/* Portrait viewports use the tall crop, which is already framed correctly,
+   so centre it rather than pinning it left. */
+@media (orientation: portrait) {
+  .hero-img { object-position: center; }
+}
+
 .hero::after {
   content: '';
   position: absolute;
@@ -155,18 +161,28 @@ section { padding: 120px 52px; }
   color: var(--n100);
 }
 
+.statement .stance {
+  margin-top: 28px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.5;
+  color: var(--n100);
+}
+
 .statement .quiet {
-  margin-top: 24px;
+  margin-top: 16px;
   font-size: 16px;
   font-weight: 400;
+  letter-spacing: 0;
   color: var(--n300);
   line-height: 1.7;
 }
 
-/* ── Image strip (placeholder — hidden until URLs wired in) ── */
+/* ── Image strip ── */
 
 .image-strip {
-  display: none; /* remove when strip images are ready */
+  display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 3px;
   padding: 0;
@@ -179,24 +195,23 @@ section { padding: 120px 52px; }
   display: block;
 }
 
-@media (max-width: 767px) { .image-strip { grid-template-columns: repeat(2, 1fr); } }
+/* Two columns on mobile. Frames 3 and 4 swap so the high-key / low-key
+   alternation reads diagonally instead of stacking in columns. */
+@media (max-width: 767px) {
+  .image-strip { grid-template-columns: repeat(2, 1fr); }
+  .image-strip img:nth-child(4) { order: 1; }
+  .image-strip img:nth-child(3) { order: 2; }
+}
 
 /* ── Process ── */
-
-.process h2 {
-  font-size: clamp(24px, 3vw, 36px);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  color: var(--n100);
-  margin-bottom: 28px;
-}
 
 .process p {
   font-size: 17px;
   color: var(--n300);
   line-height: 1.75;
 }
+
+.process p + p { margin-top: 24px; }
 
 /* ── Full-width break (placeholder — hidden until URL wired in) ── */
 
@@ -359,17 +374,19 @@ footer {
   </div>
 </nav>
 
-<!-- ── Hero ── -->
+<!-- ── Hero ──
+  Switched on orientation, not width. A portrait viewport (phone, iPad held
+  upright) gets the tall crop; anything landscape gets the wide frame. -->
 <header class="hero">
   <picture>
-    <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779771467/95441_mbbjb2.jpg">
+    <source media="(orientation: portrait)" srcset="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1786474996/EB_-Alt-Coded-by-Wawa-10528-2_gw8a2j.jpg">
     <img class="hero-img"
-      src="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779770843/Sneha-Shaw-23-07-23-3307_yvjmoo.jpg"
+      src="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1786470891/EB_-Alt-Coded-by-Wawa-10528-1_lflzey.jpg"
       alt="Portrait — Earl Kiu" />
   </picture>
   <div class="hero-content">
-    <h1 class="hero-title">Most people have never been photographed.</h1>
-    <p class="hero-sub">They've been posed.</p>
+    <h1 class="hero-title">Imagine yourself as a character.</h1>
+    <p class="hero-sub">What's the story you want to tell?</p>
   </div>
 </header>
 
@@ -377,25 +394,26 @@ footer {
 <section class="statement">
   <div class="measure">
     <span class="section-label">The Session</span>
-    <p>A portrait session, produced like an editorial campaign — yours.</p>
-    <p class="quiet">Not a studio package. Before we shoot, we talk — who you are, what you carry, who you want to be in front of the lens. From that conversation I build a mood board, a character, a set. Then you step into it.</p>
+    <p>A portrait session, produced like an editorial campaign.</p>
+    <p class="stance">I build the set. You bring the character.</p>
+    <p class="quiet">Every living being carries a charming nature — beautiful moments waiting between scenes. Complex yet vivid, like characters in an unfolding story.</p>
   </div>
 </section>
 
-<!-- ── Image strip (hidden until URLs wired in) ── -->
+<!-- ── Image strip ── -->
 <section class="image-strip">
-  <img src="PASTE_STRIP_URL_1" alt="Portrait — Earl Kiu" loading="lazy" />
-  <img src="PASTE_STRIP_URL_2" alt="Portrait — Earl Kiu" loading="lazy" />
-  <img src="PASTE_STRIP_URL_3" alt="Portrait — Earl Kiu" loading="lazy" />
-  <img src="PASTE_STRIP_URL_4" alt="Portrait — Earl Kiu" loading="lazy" />
+  <img src="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1786471571/Kissahh-X-Elda-02-02-24-5011-BNW_dgid1o.jpg" alt="Portrait — Earl Kiu" loading="lazy" />
+  <img src="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1786471219/Denise_28-04-24_5451_yhfc0k.jpg" alt="Portrait — Earl Kiu" loading="lazy" />
+  <img src="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1786471191/Cindy-03-05-23-2897_sdyrrh.jpg" alt="Portrait — Earl Kiu" loading="lazy" />
+  <img src="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1786471323/Sneha_Shaw_23-07-23_3606_1_ifctfq.jpg" alt="Portrait — Earl Kiu" loading="lazy" />
 </section>
 
 <!-- ── Process ── -->
 <section class="process">
   <div class="measure">
     <span class="section-label">How It Works</span>
-    <h2>Imagine yourself as a character. What's the story you want to tell?</h2>
-    <p>Every living being carries a charming nature — beautiful moments waiting between scenes. Complex yet vivid, like characters in an unfolding story. I build the set. You bring the character. I shoot what happens in between.</p>
+    <p>We talk first — who you are, what you carry, how you want to be seen. From that, I build a mood board, a character, a set.</p>
+    <p>On the day, we go slow. I direct. You don't need to know how to pose. Somewhere in the middle of it you stop performing, and that's usually where the frame is.</p>
   </div>
 </section>
 
@@ -418,7 +436,7 @@ footer {
         <div class="tier-detail">Two hours. Six images.</div>
       </div>
     </div>
-    <p class="pricing-notes">Six images per session, curated by me. No add-ons — if you want more, we shoot again. Commercial licensing on request. Private studio, Kuala Lumpur — location confirmed on booking.</p>
+    <p class="pricing-notes">Six images per session, curated by me. Additional images from the same session are RM200 each. Commercial licensing on request. Private studio, Kuala Lumpur — location confirmed on booking.</p>
   </div>
 </section>
 

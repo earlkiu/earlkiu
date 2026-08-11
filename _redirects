@@ -10,13 +10,19 @@
 /collection/sneha-shaw-2023-01        /collection/sneha-shaw-2023-07.html  301
 /collection/sneha-shaw-2023-01.html   /collection/sneha-shaw-2023-07.html  301
 
-# Writing lives on its own subdomain.
-# It is published as a separate Netlify site (steady-beijinho-3c3bb9) from
-# this same repo, branch main, publish directory = writing/. Because the
-# folder is also inside this site's root deploy, it would otherwise serve a
-# duplicate copy at earlkiu.com/writing.
+# ── Subdomain folders ─────────────────────────────────────────────────────
+# These folders are each published as their own Netlify site from this same
+# repo, but they also sit inside this site's root deploy — so without these
+# rules the same content serves at both the subdomain and the subfolder path.
 #
-# The `!` is mandatory here: static files exist at these paths and would
-# shadow an unforced rule.
-/writing           https://writing.earlkiu.com/          301!
-/writing/*         https://writing.earlkiu.com/:splat    301!
+# The `!` is mandatory: static files exist at these paths and would shadow an
+# unforced rule.
+#
+#   writing/   -> writing.earlkiu.com    (Netlify project: steady-beijinho-3c3bb9)
+#   portrait/  -> portrait.earlkiu.com   (Netlify project: earlkiu-portrait)
+
+/writing           https://writing.earlkiu.com/           301!
+/writing/*         https://writing.earlkiu.com/:splat     301!
+
+/portrait          https://portrait.earlkiu.com/          301!
+/portrait/*        https://portrait.earlkiu.com/:splat    301!

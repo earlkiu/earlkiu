@@ -44,13 +44,6 @@ const collections = [
     cover:    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779382053/Denise_28-04-24_5451_fhm8jy.jpg'
   },
   {
-    title:    'Sneha Shaw',
-    url:      '/collection/sneha-shaw-2023-01.html',
-    category: 'People',
-    year:     '2023',
-    cover:    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1786459480/Sneha_Shaw_23-07-23_3606_1_qo65ob.jpg'
-  },
-  {
     title:    'Cindy Lee',
     url:      '/collection/cindy-lee-2023-05.html',
     category: 'People',

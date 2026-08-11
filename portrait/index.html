@@ -96,12 +96,6 @@ nav {
   object-position: left center;
 }
 
-/* Mobile: same image, focal point pulled right.
-   Higher percentage moves further right. */
-@media (max-width: 767px) {
-  .hero-img { object-position: 70% center; }
-}
-
 .hero::after {
   content: '';
   position: absolute;
@@ -365,11 +359,15 @@ footer {
   </div>
 </nav>
 
-<!-- ── Hero ── -->
+<!-- ── Hero ──
+  Mobile (≤767px) gets its own crop. Tablet and up follow the desktop image. -->
 <header class="hero">
-  <img class="hero-img"
-    src="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1786470891/EB_-Alt-Coded-by-Wawa-10528-1_lflzey.jpg"
-    alt="Portrait — Earl Kiu" />
+  <picture>
+    <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1786474996/EB_-Alt-Coded-by-Wawa-10528-2_gw8a2j.jpg">
+    <img class="hero-img"
+      src="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1786470891/EB_-Alt-Coded-by-Wawa-10528-1_lflzey.jpg"
+      alt="Portrait — Earl Kiu" />
+  </picture>
   <div class="hero-content">
     <h1 class="hero-title">Most people have never been photographed.</h1>
     <p class="hero-sub">They've been posed.</p>

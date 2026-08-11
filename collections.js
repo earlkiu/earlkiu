@@ -18,7 +18,7 @@
 
 const collections = [
  {
-    title:    'Zyra 2025/05',
+    title:    'Zyra',
     url:      '/collection/zyra-2025-05.html',
     category: 'People',
     year:     '2025/05',

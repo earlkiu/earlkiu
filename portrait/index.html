@@ -96,6 +96,12 @@ nav {
   object-position: left center;
 }
 
+/* Portrait viewports use the tall crop, which is already framed correctly,
+   so centre it rather than pinning it left. */
+@media (orientation: portrait) {
+  .hero-img { object-position: center; }
+}
+
 .hero::after {
   content: '';
   position: absolute;
@@ -360,10 +366,11 @@ footer {
 </nav>
 
 <!-- ── Hero ──
-  Mobile (≤767px) gets its own crop. Tablet and up follow the desktop image. -->
+  Switched on orientation, not width. A portrait viewport (phone, iPad held
+  upright) gets the tall crop; anything landscape gets the wide frame. -->
 <header class="hero">
   <picture>
-    <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1786474996/EB_-Alt-Coded-by-Wawa-10528-2_gw8a2j.jpg">
+    <source media="(orientation: portrait)" srcset="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1786474996/EB_-Alt-Coded-by-Wawa-10528-2_gw8a2j.jpg">
     <img class="hero-img"
       src="https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1786470891/EB_-Alt-Coded-by-Wawa-10528-1_lflzey.jpg"
       alt="Portrait — Earl Kiu" />

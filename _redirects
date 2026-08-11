@@ -9,3 +9,14 @@
 /collection/cindy-lee-2023-01.html   /collection/cindy-lee-2023-05.html   301
 /collection/sneha-shaw-2023-01        /collection/sneha-shaw-2023-07.html  301
 /collection/sneha-shaw-2023-01.html   /collection/sneha-shaw-2023-07.html  301
+
+# Writing lives on its own subdomain.
+# It is published as a separate Netlify site (steady-beijinho-3c3bb9) from
+# this same repo, branch main, publish directory = writing/. Because the
+# folder is also inside this site's root deploy, it would otherwise serve a
+# duplicate copy at earlkiu.com/writing.
+#
+# The `!` is mandatory here: static files exist at these paths and would
+# shadow an unforced rule.
+/writing           https://writing.earlkiu.com/          301!
+/writing/*         https://writing.earlkiu.com/:splat    301!

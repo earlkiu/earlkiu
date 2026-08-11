@@ -1,0 +1,11 @@
+# Old sequence-based collection slugs -> month-based slugs
+/collection/zyra-2025-01        /collection/zyra-2025-05.html        301
+/collection/zyra-2025-01.html   /collection/zyra-2025-05.html        301
+/collection/ming-xuan-2025-01        /collection/ming-xuan-2025-08.html   301
+/collection/ming-xuan-2025-01.html   /collection/ming-xuan-2025-08.html   301
+/collection/denise-2024-01        /collection/denise-2024-04.html      301
+/collection/denise-2024-01.html   /collection/denise-2024-04.html      301
+/collection/cindy-lee-2023-01        /collection/cindy-lee-2023-05.html   301
+/collection/cindy-lee-2023-01.html   /collection/cindy-lee-2023-05.html   301
+/collection/sneha-shaw-2023-01        /collection/sneha-shaw-2023-07.html  301
+/collection/sneha-shaw-2023-01.html   /collection/sneha-shaw-2023-07.html  301

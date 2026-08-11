@@ -195,7 +195,13 @@ section { padding: 120px 52px; }
   display: block;
 }
 
-@media (max-width: 767px) { .image-strip { grid-template-columns: repeat(2, 1fr); } }
+/* Two columns on mobile. Frames 3 and 4 swap so the high-key / low-key
+   alternation reads diagonally instead of stacking in columns. */
+@media (max-width: 767px) {
+  .image-strip { grid-template-columns: repeat(2, 1fr); }
+  .image-strip img:nth-child(4) { order: 1; }
+  .image-strip img:nth-child(3) { order: 2; }
+}
 
 /* ── Process ── */
 

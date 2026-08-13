@@ -3,6 +3,28 @@
 Hand-written static site for Earl Kiu's personal portrait brand. No CMS, no build step
 — plain HTML/CSS/JS served by Netlify. Images are hosted on Cloudinary.
 
+## Scope of this repo
+
+This repo is **earlkiu.com only** — the portfolio. As of 13 August 2026 every
+subdomain lives in its own repo and its own Netlify site:
+
+| Domain | Repo |
+|---|---|
+| earlkiu.com | `earlkiu/earlkiu` (this one) |
+| portrait.earlkiu.com | `earlkiu/portrait` |
+| writing.earlkiu.com | `earlkiu/writing` |
+| collab.earlkiu.com | `earlkiu/collab` |
+
+The earlier pattern — one repo publishing several subfolders as separate Netlify
+sites — was abandoned because this site publishes the repo root, so every
+subfolder also served at `earlkiu.com/<folder>` as duplicate content, held back
+only by `_redirects` rules that could regress. Separate repos make those paths
+404 structurally.
+
+**Do not add a subdomain folder back into this repo**, and do not add
+`/portrait` or `/writing` rules to `_redirects` — there is nothing there to
+redirect.
+
 ## Branch policy
 
 **Work on `dev`. Never commit directly to `main`.**
@@ -10,6 +32,9 @@ Hand-written static site for Earl Kiu's personal portrait brand. No CMS, no buil
 `main` is the deployed branch and is usually behind. It gets merged from `dev` once
 changes are previewed. If `main` and `dev` disagree, `dev` is correct — do not "fix"
 `dev` to match `main`.
+
+Note this policy is for *this* repo. `earlkiu/writing` and `earlkiu/portrait`
+deploy from `main`.
 
 ## Adding a collection
 
@@ -67,3 +92,7 @@ The GitHub MCP tools can create and update files but **cannot delete them**. A r
 therefore leaves the old file behind, and on Netlify an existing file shadows a
 `_redirects` rule — producing two live URLs for the same collection. After any rename,
 tell Earl explicitly which files he needs to delete by hand.
+
+Earl can delete a whole directory from the GitHub web UI — open the folder, use the
+"..." menu at top right, Delete directory. Point him there rather than at a
+file-by-file list.

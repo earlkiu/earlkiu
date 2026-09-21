@@ -23,6 +23,13 @@
 
 const collections = [
   {
+    title:    'Ashlyn Devissha',
+    url:      '/collection/ashlyn-devissha-2026-08.html',
+    category: 'People',
+    year:     '2026/08',
+    cover:    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1789978308/EQ_Ashlyn_30-08-26_1325_ltpzsu.jpg'
+  },
+  {
     title:    'Zyra',
     url:      '/collection/zyra-2025-05.html',
     category: 'People',

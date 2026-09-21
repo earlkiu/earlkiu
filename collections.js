@@ -30,6 +30,13 @@ const collections = [
     cover:    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1789981477/EQ_Gabe_24-08-26_24075_bsfscm.jpg'
   },
   {
+    title:    'Gabe',
+    url:      '/collection/gabe-2026-08.html',
+    category: 'People',
+    year:     '2026/08',
+    cover:    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1789982022/EQ_Gabe_24-08-26_23842_ujeuda.jpg'
+  },
+  {
     title:    'Ashlyn Devissha',
     url:      '/collection/ashlyn-devissha-2026-08.html',
     category: 'People',

@@ -1,12 +1,13 @@
 # earlkiu.com
 
 Hand-written static site for Earl Kiu's personal portrait brand. No CMS, no build step
-— plain HTML/CSS/JS served by Netlify. Images are hosted on Cloudinary.
+— plain HTML/CSS/JS served by a Cloudflare Worker (`earlkiu`) with static assets.
+Images are hosted on Cloudinary.
 
 ## Scope of this repo
 
 This repo is **earlkiu.com only** — the portfolio. As of 13 August 2026 every
-subdomain lives in its own repo and its own Netlify site:
+subdomain lives in its own repo and its own site:
 
 | Domain | Repo |
 |---|---|
@@ -29,8 +30,10 @@ redirect.
 
 **Work on `dev`. Never commit directly to `main`.**
 
-`main` is the deployed branch and is usually behind. It gets merged from `dev` once
-changes are previewed. If `main` and `dev` disagree, `dev` is correct — do not "fix"
+`main` is the deployed branch and is usually behind. A push to `main` deploys
+production through Workers Builds. A push to `dev` gives a Preview at
+`https://dev-earlkiu.itsme-532.workers.dev` (marked `noindex`); `main` gets merged
+from `dev` once changes are checked there. If `main` and `dev` disagree, `dev` is correct — do not "fix"
 `dev` to match `main`.
 
 Note this policy is for *this* repo. `earlkiu/writing` and `earlkiu/portrait`
@@ -74,7 +77,8 @@ Add the extensionless URL (`/collection/name-YYYY-MM`, no `.html`).
 
 ### 4. `_redirects`
 
-301 any retired slug to its replacement. Netlify reads this from the site root.
+301 any retired slug to its replacement, with an extensionless destination
+(`/collection/name-YYYY-MM`, not `.html`). Cloudflare reads this from the site root.
 
 ## Conventions that are easy to get wrong
 
@@ -86,12 +90,25 @@ Add the extensionless URL (`/collection/name-YYYY-MM`, no `.html`).
 - **`og:url` is the classic copy-paste bug.** When cloning a page, check it points at
   the new slug, not the page it was copied from.
 
+## Hosting files
+
+- `wrangler.jsonc` — the Worker's config. The repo root is the assets folder.
+  `compatibility_date` is the day it was written; it doesn't need bumping.
+- `_headers` — keeps `X-Robots-Tag: noindex` on any `*.workers.dev` address.
+- `.assetsignore` — files in the root that must not be served (config, `node_modules`,
+  `package.json`). **A new root file that shouldn't be public goes in here.** `CLAUDE.md`
+  is served at its URL on purpose.
+- `package.json` / `package-lock.json` — pin Wrangler for Workers Builds.
+- `.html` URLs: `/about` serves `about.html`; `/about.html` → 307 → `/about`. Link
+  internal pages without `.html`.
+
 ## Note for agents
 
 The GitHub MCP tools can create and update files but **cannot delete them**. A rename
-therefore leaves the old file behind, and on Netlify an existing file shadows a
-`_redirects` rule — producing two live URLs for the same collection. After any rename,
-tell Earl explicitly which files he needs to delete by hand.
+therefore leaves the old file behind. On Cloudflare a `_redirects` rule wins over a
+file at the same path, so the old file is hidden by its 301 rather than shadowing it —
+but it is still dead weight. After any rename, tell Earl explicitly which files he
+needs to delete by hand.
 
 Earl can delete a whole directory from the GitHub web UI — open the folder, use the
 "..." menu at top right, Delete directory. Point him there rather than at a

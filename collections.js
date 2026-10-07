@@ -12,7 +12,7 @@
 // Format:
 // {
 //   title:    'Talent Name',          ← name only, no date
-//   url:      '/collection/file-slug.html',
+//   url:      '/collection/file-slug',
 //   category: 'People',               ← People / Fashion / Editorial
 //   year:     '2025/05',              ← YYYY/MM, month of the shoot
 //   cover:    'https://res.cloudinary.com/...'   ← strongest image from the collection
@@ -24,56 +24,56 @@
 const collections = [
   {
     title:    'Ashlyn Devissha',
-    url:      '/collection/ashlyn-devissha-2026-08.html',
+    url:      '/collection/ashlyn-devissha-2026-08',
     category: 'People',
     year:     '2026/08',
     cover:    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1789978308/EQ_Ashlyn_30-08-26_1325_ltpzsu.jpg'
   },
   {
     title:    'Gabe & Jesse',
-    url:      '/collection/gabe-jesse-2026-08.html',
+    url:      '/collection/gabe-jesse-2026-08',
     category: 'People',
     year:     '2026/08',
     cover:    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1789981477/EQ_Gabe_24-08-26_24075_bsfscm.jpg'
   },
   {
     title:    'Gabe',
-    url:      '/collection/gabe-2026-08.html',
+    url:      '/collection/gabe-2026-08',
     category: 'People',
     year:     '2026/08',
     cover:    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1789982022/EQ_Gabe_24-08-26_23842_ujeuda.jpg'
   },
   {
     title:    'Zyra',
-    url:      '/collection/zyra-2025-05.html',
+    url:      '/collection/zyra-2025-05',
     category: 'People',
     year:     '2025/05',
     cover:    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779119897/Zyra_03-05-25_10526_ivngdo.jpg'
   },
   {
     title:    'Ming Xuan',
-    url:      '/collection/ming-xuan-2025-08.html',
+    url:      '/collection/ming-xuan-2025-08',
     category: 'People',
     year:     '2025/08',
     cover:    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779116539/Ming-Xuan-14-08-25-0087_k8gptw.jpg'
   },
   {
     title:    'Denise',
-    url:      '/collection/denise-2024-04.html',
+    url:      '/collection/denise-2024-04',
     category: 'People',
     year:     '2024/04',
     cover:    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779382053/Denise_28-04-24_5451_fhm8jy.jpg'
   },
   {
     title:    'Cindy Lee',
-    url:      '/collection/cindy-lee-2023-05.html',
+    url:      '/collection/cindy-lee-2023-05',
     category: 'People',
     year:     '2023/05',
     cover:    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1779692573/Cindy-03-05-23-2335_qlayth.jpg'
   },
   {
     title:    'Sneha Shaw',
-    url:      '/collection/sneha-shaw-2023-07.html',
+    url:      '/collection/sneha-shaw-2023-07',
     category: 'People',
     year:     '2023/07',
     cover:    'https://res.cloudinary.com/dljk05sju/image/upload/q_auto/f_auto/v1786459480/Sneha_Shaw_23-07-23_3606_1_qo65ob.jpg'
